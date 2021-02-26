@@ -3,8 +3,7 @@
     <div class="flex flex-col justify-start min-h-screen">
       <header
         ref="header"
-        class="sticky top-0 z-20 w-full bg-ui-background"
-        @resize="setHeaderHeight"
+        class="sticky top-0 z-20 w-full bg-ui-background h-16"
       >
         <LayoutHeader />
       </header>
@@ -15,8 +14,8 @@
       >
         <aside
           v-if="hasSidebar"
-          class="sidebar"
-          :style="sidebarStyle"
+          class="sidebar top-16"
+          style="height: calc(100vh - 4rem)"
           :class="{ open: sidebarOpen }"
         >
           <div class="w-full pb-16 bg-ui-background">
@@ -83,7 +82,6 @@ export default {
 
   data() {
     return {
-      headerHeight: 0,
       sidebarOpen: false,
     };
   },
@@ -94,24 +92,9 @@ export default {
     },
   },
 
-  methods: {
-    setHeaderHeight() {
-      this.$nextTick(() => {
-        this.headerHeight = this.$refs.header.offsetHeight;
-      });
-    },
-  },
-
   computed: {
-    sidebarStyle() {
-      return {
-        top: this.headerHeight + "px",
-        height: `calc(100vh - ${this.headerHeight}px)`,
-      };
-    },
-
     hasSidebar() {
-      return this.$page && this.headerHeight > 0;
+      return this.$page;
     },
 
     params() {
@@ -131,10 +114,6 @@ export default {
     version() {
       return this.params.version;
     },
-  },
-
-  mounted() {
-    this.setHeaderHeight();
   },
 
   metaInfo() {

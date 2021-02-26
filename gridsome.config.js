@@ -36,13 +36,48 @@ module.exports = {
         ],
       },
     ],
+    repositories: [
+      {
+        name: "core",
+        url: "https://github.com/DirectoryTree/LdapRecord",
+        versions: [
+          {
+            name: "v1.x",
+            slug: "v1",
+            uri: "/docs/core/v1",
+          },
+          {
+            name: "v2.x",
+            slug: "v2",
+            uri: "/docs/core/v2",
+          },
+        ],
+      },
+      {
+        name: "laravel",
+        url: "https://github.com/DirectoryTree/LdapRecord-Laravel",
+        versions: [
+          {
+            name: "v1.x",
+            slug: "v1",
+            uri: "/docs/laravel/v1",
+          },
+          {
+            name: "v2.x",
+            slug: "v2",
+            uri: "/docs/laravel/v2",
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     {
       use: "@gridsome/source-filesystem",
       options: {
-        baseDir: "./content",
-        path: "**/*.md",
+        baseDir: "./content/docs",
+        path: "*/**/*.md",
+        pathPrefix: "/docs",
         typeName: "MarkdownPage",
         remark: {
           externalLinksTarget: "_blank",

@@ -52,9 +52,9 @@ query Sidebar {
 </static-query>
 
 <script>
-import SidebarHeader from "./SidebarHeader";
-import SidebarSection from "./SidebarSection";
-import VersionSelect from "./VersionSelect";
+import SidebarHeader from "@/components/SidebarHeader";
+import SidebarSection from "@/components/SidebarSection";
+import VersionSelect from "@/components/VersionSelect";
 
 export default {
   props: {

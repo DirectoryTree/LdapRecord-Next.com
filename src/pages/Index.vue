@@ -269,14 +269,13 @@ foreach ($groups as $group) {
 </template>
 
 <script>
-import BackgroundSvg from "@/assets/background.svg";
-
 import Button from "@/components/Button";
 import Feature from "@/components/Feature";
 import Example from "@/components/Example";
 import LaravelIcon from "@/components/LaravelIcon";
 import CodeWindow from "@/components/CodeWindow";
 import CodeWindowTab from "@/components/CodeWindowTab";
+import BackgroundSvg from "@/assets/background.svg";
 
 import {
   ArrowRightCircleIcon,

@@ -1,12 +1,34 @@
-<script>
-import repositories from "../repositories.json";
+<static-query>
+query {
+ 	metadata {
+    settings {
+      repositories {
+        name
+        url
+        versions {
+          name
+          slug
+          uri
+        }
+      }
+    }
+  } 
+}
+</static-query>
 
+<script>
 export default {
   data() {
     return {
       repository: null,
       currentVersion: null,
     };
+  },
+
+  computed: {
+    repositories() {
+      return this.$static.metadata.settings.repositories;
+    },
   },
 
   created() {
@@ -39,7 +61,7 @@ export default {
       );
 
       this.currentVersion = version;
-      this.repository = repositories.find((r) => r.name === repository);
+      this.repository = this.repositories.find((r) => r.name === repository);
     },
   },
 };

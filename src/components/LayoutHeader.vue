@@ -2,12 +2,15 @@
   <div class="py-2 border-b-4 border-ui-primary">
     <div class="container">
       <div class="flex items-center justify-between -mx-2 sm:-mx-4">
-        <div class="flex flex-col items-center px-2 sm:px-4 sm:flex-row">
-          <g-link to="/" class="flex items-center text-ui-primary" title="Home">
-            <Logo :width="200" class="hidden md:inline-block" />
-            <LogoIcon :width="50" class="inline-block md:hidden" />
-          </g-link>
-        </div>
+        <g-link to="/" class="px-2" title="Home">
+          <!--
+            We'll use <img> tags to load our <svg> logos due to
+            issues of gradients conflicting with eachother on
+            some browsers, causing them not to be displayed.
+          -->
+          <LogoIcon :width="50" class="inline-block md:hidden" />
+          <Logo :width="175" class="hidden md:inline-block" />
+        </g-link>
 
         <div class="w-full px-2 sm:px-4 max-w-screen-xs">
           <ClientOnly>
@@ -68,7 +71,7 @@
             </div>
           </OnRepository>
 
-          <ToggleDarkMode class="ml-2 sm:ml-8">
+          <ToggleDarkMode class="ml-0 lg:ml-8">
             <template #default="{ dark }">
               <MoonIcon v-if="dark" size="1.5x" />
               <SunIcon v-else size="1.5x" />
@@ -89,10 +92,10 @@ query {
 </static-query>
 
 <script>
-import ToggleDarkMode from "@/components/ToggleDarkMode";
 import Logo from "@/components/Logo";
 import LogoIcon from "@/components/LogoIcon";
 import LaravelIcon from "@/components/LaravelIcon";
+import ToggleDarkMode from "@/components/ToggleDarkMode";
 import {
   BoxIcon,
   SunIcon,

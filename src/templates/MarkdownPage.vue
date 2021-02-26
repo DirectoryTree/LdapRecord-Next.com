@@ -45,6 +45,24 @@
   </Layout>
 </template>
 
+<static-query>
+query {
+ 	metadata {
+    settings {
+      repositories {
+        name
+        url
+        versions {
+          name
+          slug
+          uri
+        }
+      }
+    }
+  } 
+}
+</static-query>
+
 <page-query>
 query ($id: ID!) {
   markdownPage(id: $id) {
@@ -73,7 +91,6 @@ query ($id: ID!) {
 
 <script>
 import { AlertCircleIcon } from "vue-feather-icons";
-import repositories from "../repositories.json";
 import OnThisPage from "@/components/OnThisPage.vue";
 import NextPrevLinks from "@/components/NextPrevLinks.vue";
 
@@ -101,6 +118,24 @@ export default {
     };
   },
 
+  computed: {
+    isOnLatestVersion() {
+      return this.currentVersion === this.latestVersion?.slug;
+    },
+
+    latestVersionUri() {
+      return this.latestVersion?.uri;
+    },
+
+    latestVersion() {
+      return this.repository.versions[this.repository.versions.length - 1];
+    },
+
+    repositories() {
+      return this.$static.metadata.settings.repositories;
+    },
+  },
+
   methods: {
     setRepository() {
       const route = require("path-match")({
@@ -114,21 +149,7 @@ export default {
       );
 
       this.currentVersion = version;
-      this.repository = repositories.find((r) => r.name === repository);
-    },
-  },
-
-  computed: {
-    isOnLatestVersion() {
-      return this.currentVersion === this.latestVersion?.slug;
-    },
-
-    latestVersionUri() {
-      return this.latestVersion?.uri;
-    },
-
-    latestVersion() {
-      return this.repository.versions[this.repository.versions.length - 1];
+      this.repository = this.repositories.find((r) => r.name === repository);
     },
   },
 

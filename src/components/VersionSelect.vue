@@ -20,9 +20,26 @@
   </div>
 </template>
 
+<static-query>
+query {
+ 	metadata {
+    settings {
+      repositories {
+        name
+        url
+        versions {
+          name
+          slug
+          uri
+        }
+      }
+    }
+  } 
+}
+</static-query>
+
 <script>
-import SidebarHeader from "./SidebarHeader";
-import repositories from "../repositories.json";
+import SidebarHeader from "@/components/SidebarHeader";
 
 export default {
   components: { SidebarHeader },
@@ -52,6 +69,10 @@ export default {
         ).uri;
       };
     },
+
+    repositories() {
+      return this.$static.metadata.settings.repositories;
+    },
   },
 
   methods: {
@@ -65,7 +86,7 @@ export default {
       const params = route("/docs/:repository/:version/")(this.$route.path);
 
       this.currentVersion = params.version;
-      this.repository = repositories.find(
+      this.repository = this.repositories.find(
         (repository) => repository.name === params.repository
       );
     },

@@ -1,13 +1,14 @@
 <template>
-  <LogoIconSvg />
+  <img
+    src="/logo-icon.svg"
+    :style="{ width: `${width}px`, minWidth: `${width}px` }"
+  />
 </template>
 
 <script>
-import LogoIconSvg from "../assets/logo-icon.svg";
-
 export default {
-  components: {
-    LogoIconSvg,
+  props: {
+    width: Number,
   },
 };
 </script>
