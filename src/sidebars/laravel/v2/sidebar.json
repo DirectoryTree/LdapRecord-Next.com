@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Upgrade Guide",
+    "items": [
+      { "name": "Upgrading from v1", "path": "/docs/laravel/v2/upgrading" }
+    ]
+  },
+  {
+    "name": "Introduction",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v2" },
+      { "name": "Installation", "path": "/docs/laravel/v2/installation" },
+      { "name": "Usage", "path": "/docs/laravel/v2/usage" }
+    ]
+  },
+  {
+    "name": "Authentication",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v2/auth" },
+      { "name": "Multi-Domain", "path": "/docs/laravel/v2/auth/multi-domain" },
+      {
+        "name": "Restricting Login",
+        "path": "/docs/laravel/v2/auth/restricting-login"
+      },
+      { "name": "Testing", "path": "/docs/laravel/v2/auth/testing" }
+    ]
+  },
+  {
+    "name": "Plain Auth",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v2/auth/plain" },
+      {
+        "name": "Configuration",
+        "path": "/docs/laravel/v2/auth/plain/configuration"
+      },
+      {
+        "name": "Logging In",
+        "path": "/docs/laravel/v2/auth/plain/logging-in"
+      },
+      {
+        "name": "Laravel UI",
+        "path": "/docs/laravel/v2/auth/plain/laravel-ui"
+      },
+      {
+        "name": "Laravel Breeze",
+        "path": "/docs/laravel/v2/auth/plain/laravel-breeze"
+      },
+      {
+        "name": "Laravel Jetstream",
+        "path": "/docs/laravel/v2/auth/plain/laravel-jetstream"
+      }
+    ]
+  },
+  {
+    "name": "Database Auth",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v2/auth/database" },
+      {
+        "name": "Installation",
+        "path": "/docs/laravel/v2/auth/database/installation"
+      },
+      {
+        "name": "Configuration",
+        "path": "/docs/laravel/v2/auth/database/configuration"
+      },
+      {
+        "name": "Logging In",
+        "path": "/docs/laravel/v2/auth/database/logging-in"
+      },
+      {
+        "name": "Importing Users",
+        "path": "/docs/laravel/v2/auth/database/importing"
+      },
+      {
+        "name": "Laravel UI",
+        "path": "/docs/laravel/v2/auth/database/laravel-ui"
+      },
+      {
+        "name": "Laravel Breeze",
+        "path": "/docs/laravel/v2/auth/database/laravel-breeze"
+      },
+      {
+        "name": "Laravel Jetstream",
+        "path": "/docs/laravel/v2/auth/database/laravel-jetstream"
+      }
+    ]
+  },
+  {
+    "name": "SSO Authentication",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v2/auth/sso" },
+      { "name": "Setup", "path": "/docs/laravel/v2/auth/sso/setup" }
+    ]
+  },
+  {
+    "name": "Other Features",
+    "items": [
+      { "name": "Lumen", "path": "/docs/laravel/v2/lumen" },
+      { "name": "Events", "path": "/docs/laravel/v2/events" },
+      { "name": "Testing", "path": "/docs/laravel/v2/testing" },
+      { "name": "Debugging", "path": "/docs/laravel/v2/debugging" },
+      { "name": "Importing Objects", "path": "/docs/laravel/v2/importing" }
+    ]
+  },
+  {
+    "name": "Extra",
+    "items": [
+      { "name": "Versioning", "path": "/docs/laravel/v2/versioning" },
+      { "name": "License", "path": "/docs/laravel/v2/license" }
+    ]
+  }
+]

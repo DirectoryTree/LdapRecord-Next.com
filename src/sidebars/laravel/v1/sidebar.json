@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Introduction",
+    "items": [
+      { "name": "Quickstart", "path": "/docs/laravel/v1/quickstart" },
+      { "name": "Overview", "path": "/docs/laravel/v1" },
+      { "name": "Installation", "path": "/docs/laravel/v1/installation" },
+      { "name": "Usage", "path": "/docs/laravel/v1/usage" }
+    ]
+  },
+  {
+    "name": "Authentication",
+    "items": [
+      { "name": "Quickstart", "path": "/docs/laravel/v1/auth/quickstart" },
+      { "name": "Overview", "path": "/docs/laravel/v1/auth" },
+      { "name": "Installation", "path": "/docs/laravel/v1/auth/installation" },
+      {
+        "name": "Configuration",
+        "path": "/docs/laravel/v1/auth/configuration"
+      },
+      { "name": "Setup", "path": "/docs/laravel/v1/auth/setup" },
+      {
+        "name": "Laravel Jetsream",
+        "path": "/docs/laravel/v1/auth/laravel-jetstream"
+      },
+      { "name": "Laravel UI", "path": "/docs/laravel/v1/auth/laravel-ui" },
+      {
+        "name": "Multi-Domain - Laravel UI",
+        "path": "/docs/laravel/v1/auth/multi-domain"
+      },
+      { "name": "Importing Users", "path": "/docs/laravel/v1/auth/importing" },
+      {
+        "name": "Restricting Sign In",
+        "path": "/docs/laravel/v1/auth/restricting-sign-in"
+      },
+      { "name": "Testing", "path": "/docs/laravel/v1/auth/testing" }
+    ]
+  },
+  {
+    "name": "SSO Authentication",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v1/auth/sso" },
+      { "name": "Setup", "path": "/docs/laravel/v1/auth/sso/setup" }
+    ]
+  },
+  {
+    "name": "Other Features",
+    "items": [
+      { "name": "Lumen", "path": "/docs/laravel/v1/lumen" },
+      { "name": "Events", "path": "/docs/laravel/v1/events" },
+      { "name": "Testing", "path": "/docs/laravel/v1/testing" },
+      { "name": "Debugging", "path": "/docs/laravel/v1/debugging" },
+      { "name": "Importing Objects", "path": "/docs/laravel/v1/importing" }
+    ]
+  },
+  {
+    "name": "Extra",
+    "items": [
+      { "name": "Versioning", "path": "/docs/laravel/v1/versioning" },
+      { "name": "License", "path": "/docs/laravel/v1/license" }
+    ]
+  }
+]

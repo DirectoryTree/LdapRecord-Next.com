@@ -1,0 +1,279 @@
+@import "./prism";
+@import "./prism-dark";
+
+:root {
+  --color-ui-background: theme("colors.white");
+  --color-ui-typo: theme("colors.gray.700");
+  --color-ui-sidebar: theme("colors.gray.100");
+  --color-ui-border: theme("colors.gray.300");
+  --color-ui-primary: theme("colors.purple.600");
+  --color-ui-secondary: theme("colors.gray.500");
+  --color-ui-light: theme("colors.gray.50");
+  --color-ui-shade: theme("colors.purple.50");
+
+  .bg-gradient-l-purple-light {
+    background-image: linear-gradient(
+      to right,
+      rgb(127, 0, 255) 0%,
+      rgb(225, 0, 255) 100%
+    );
+  }
+}
+
+html[lights-out] {
+  --color-ui-background: theme("colors.gray.900");
+  --color-ui-typo: theme("colors.gray.100");
+  --color-ui-sidebar: theme("colors.gray.800");
+  --color-ui-border: theme("colors.gray.800");
+  --color-ui-primary: theme("colors.purple.400");
+  --color-ui-secondary: theme("colors.gray.300");
+  --color-ui-light: theme("colors.gray.800");
+  --color-ui-shade: theme("colors.purple.900");
+
+  .bg-gradient-l-purple-light {
+    background-image: linear-gradient(
+      to right,
+      rgb(212, 119, 255) 0%,
+      rgb(255, 0, 234) 100%
+    );
+  }
+
+  blockquote a {
+    @apply text-ui-typo;
+  }
+}
+
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply leading-snug font-semibold mb-4 text-ui-typo;
+
+  &[id]:before {
+    content: "";
+    display: block;
+    height: 5rem;
+    margin-top: -5rem;
+  }
+
+  &:hover {
+    a::before {
+      @apply opacity-100;
+    }
+  }
+
+  a {
+    &::before {
+      content: "#";
+      margin-left: -1em;
+      padding-right: 1em;
+      @apply text-ui-primary absolute opacity-0 float-left;
+    }
+  }
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+h4 {
+  @apply text-lg;
+}
+
+p,
+ol,
+ul,
+pre,
+strong,
+blockquote {
+  @apply text-base text-ui-typo;
+}
+
+:not(pre) > code {
+  @apply ring-1 ring-ui-sidebar bg-ui-light text-sm text-ui-primary px-2 py-px;
+}
+
+pre {
+  @apply overflow-auto ring-1 ring-ui-sidebar bg-ui-light p-4;
+}
+
+code,
+pre {
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  font-size: 1em;
+  line-height: 1.5em;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  @apply text-ui-typo;
+  @apply text-base;
+  @apply font-mono;
+}
+
+.content {
+  &:first-child {
+    @apply mt-4;
+
+    @screen md {
+      @apply mt-8;
+    }
+
+    @screen lg {
+      @apply mt-14;
+    }
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  pre[class*="language-"] {
+    @apply my-6;
+  }
+
+  a {
+    @apply text-ui-primary underline;
+  }
+
+  ul {
+    @apply list-disc;
+
+    ul {
+      list-style: circle;
+    }
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ol,
+  ul {
+    @apply ml-5;
+
+    li {
+      @apply mb-2;
+
+      p {
+        @apply mb-0;
+      }
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+  }
+
+  blockquote {
+    @apply border-l-4 border-ui-primary bg-ui-shade py-2 px-4;
+
+    p:first-child {
+      @apply mt-0;
+    }
+
+    p:last-child {
+      @apply mb-0;
+    }
+  }
+
+  code:not([class*="language-"]) {
+    @apply rounded;
+  }
+
+  pre[class*="language-"] {
+    @apply max-w-full overflow-x-auto rounded-lg;
+
+    & > code[class*="language-"] {
+      @apply border-none leading-relaxed;
+    }
+  }
+
+  table {
+    @apply w-full overflow-hidden text-left rounded-lg shadow-sm ring-1 ring-ui-sidebar divide-y divide-ui-sidebar mb-4;
+
+    thead {
+      @apply bg-ui-light font-semibold text-xs text-ui-secondary tracking-wider uppercase;
+    }
+
+    tbody {
+      @apply divide-y divide-ui-sidebar;
+    }
+
+    th {
+      @apply p-2;
+    }
+
+    td {
+      @apply p-2 text-sm bg-ui-background border-ui-border leading-relaxed;
+    }
+  }
+}
+
+.sidebar {
+  @apply fixed bg-ui-background px-4 inset-x-0 bottom-0 w-full overflow-y-auto transition-all z-40;
+  transform: translateX(-100%);
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  @screen lg {
+    @apply w-1/4 px-0 bg-transparent top-0 bottom-auto inset-x-auto sticky z-0;
+    transform: translateX(0);
+  }
+}
+
+.text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.api-method-list {
+  > p {
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-gap: 2em;
+    -moz-column-gap: 2em;
+    -webkit-column-gap: 2em;
+
+    @screen xxl {
+      column-count: 3;
+      -moz-column-count: 3;
+      -webkit-column-count: 3;
+    }
+  }
+
+  a {
+    @apply block rounded font-mono text-sm text-ui-primary whitespace-nowrap p-1 mb-1;
+
+    &:hover {
+      @apply text-purple-900;
+    }
+  }
+}

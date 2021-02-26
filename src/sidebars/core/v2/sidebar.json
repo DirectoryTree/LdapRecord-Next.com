@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Upgrade Guide",
+    "items": [
+      { "name": "Upgrading from v1", "path": "/docs/core/v2/upgrading" }
+    ]
+  },
+  {
+    "name": "Introduction",
+    "items": [
+      { "name": "Quickstart", "path": "/docs/core/v2/quickstart" },
+      { "name": "Overview", "path": "/docs/core/v2" },
+      { "name": "Installation", "path": "/docs/core/v2/installation" },
+      { "name": "Configuration", "path": "/docs/core/v2/configuration" },
+      { "name": "Connections", "path": "/docs/core/v2/connections" }
+    ]
+  },
+  {
+    "name": "Searching",
+    "items": [
+      { "name": "Query Builder", "path": "/docs/core/v2/searching" },
+      {
+        "name": "API (Available Methods)",
+        "path": "/docs/core/v2/searching-api"
+      }
+    ]
+  },
+  {
+    "name": "Models",
+    "items": [
+      { "name": "Getting Started", "path": "/docs/core/v2/models" },
+      { "name": "Scopes", "path": "/docs/core/v2/model-scopes" },
+      { "name": "Relationships", "path": "/docs/core/v2/model-relationships" },
+      {
+        "name": "Accessors & Mutators",
+        "path": "/docs/core/v2/model-mutators"
+      },
+      { "name": "API (Available Methods)", "path": "/docs/core/v2/model-api" }
+    ]
+  },
+  {
+    "name": "Active Directory",
+    "items": [
+      { "name": "Users", "path": "/docs/core/v2/active-directory/users" },
+      { "name": "Groups", "path": "/docs/core/v2/active-directory/groups" }
+    ]
+  },
+  {
+    "name": "Other Features",
+    "items": [
+      { "name": "Authentication", "path": "/docs/core/v2/authentication" },
+      { "name": "Common Queries", "path": "/docs/core/v2/common-queries" },
+      { "name": "Caching", "path": "/docs/core/v2/caching" },
+      { "name": "Events", "path": "/docs/core/v2/events" },
+      { "name": "Logging", "path": "/docs/core/v2/logging" },
+      { "name": "Testing", "path": "/docs/core/v2/testing" }
+    ]
+  },
+  {
+    "name": "Extra",
+    "items": [
+      { "name": "Versioning", "path": "/docs/core/v2/versioning" },
+      { "name": "Credits", "path": "/docs/core/v2/credits" },
+      { "name": "License", "path": "/docs/core/v2/license" }
+    ]
+  }
+]

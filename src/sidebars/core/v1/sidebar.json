@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Introduction",
+    "items": [
+      { "name": "Quickstart", "path": "/docs/core/v1/quickstart" },
+      { "name": "Overview", "path": "/docs/core/v1" },
+      { "name": "Installation", "path": "/docs/core/v1/installation" },
+      { "name": "Configuration", "path": "/docs/core/v1/configuration" },
+      { "name": "Connections", "path": "/docs/core/v1/connections" }
+    ]
+  },
+  {
+    "name": "Searching",
+    "items": [
+      { "name": "Query Builder", "path": "/docs/core/v1/searching" },
+      {
+        "name": "API (Available Methods)",
+        "path": "/docs/core/v1/searching-api"
+      }
+    ]
+  },
+  {
+    "name": "Models",
+    "items": [
+      { "name": "Getting Started", "path": "/docs/core/v1/models" },
+      { "name": "Scopes", "path": "/docs/core/v1/model-scopes" },
+      { "name": "Relationships", "path": "/docs/core/v1/model-relationships" },
+      {
+        "name": "Accessors & Mutators",
+        "path": "/docs/core/v1/model-mutators"
+      },
+      { "name": "API (Available Methods)", "path": "/docs/core/v1/model-api" }
+    ]
+  },
+  {
+    "name": "Active Directory",
+    "items": [
+      { "name": "Users", "path": "/docs/core/v1/active-directory/users" },
+      { "name": "Groups", "path": "/docs/core/v1/active-directory/groups" }
+    ]
+  },
+  {
+    "name": "Other Features",
+    "items": [
+      { "name": "Authentication", "path": "/docs/core/v1/authentication" },
+      { "name": "Common Queries", "path": "/docs/core/v1/common-queries" },
+      { "name": "Caching", "path": "/docs/core/v1/caching" },
+      { "name": "Events", "path": "/docs/core/v1/events" },
+      { "name": "Logging", "path": "/docs/core/v1/logging" },
+      { "name": "Testing", "path": "/docs/core/v1/testing" }
+    ]
+  },
+  {
+    "name": "Extra",
+    "items": [
+      { "name": "Versioning", "path": "/docs/core/v1/versioning" },
+      { "name": "Credits", "path": "/docs/core/v1/credits" },
+      { "name": "License", "path": "/docs/core/v1/license" }
+    ]
+  }
+]
