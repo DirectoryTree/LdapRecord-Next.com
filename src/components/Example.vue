@@ -24,7 +24,7 @@
               >
                 {{ title }}
 
-                <br class="hidden lg:block" />
+                <br />
 
                 <span class="text-gradient bg-gradient-l-purple-light">
                   {{ subtitle }}
