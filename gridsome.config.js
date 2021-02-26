@@ -90,6 +90,7 @@ module.exports = {
       use: "gridsome-plugin-tailwindcss",
       options: {
         tailwindConfig: "./tailwind.config.js",
+        shouldImport: true,
         purgeConfig: {
           // Prevent purging of prism classes.
           whitelistPatternsChildren: [/token$/],

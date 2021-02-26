@@ -191,3 +191,104 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.content {
+  &:first-child {
+    @apply mt-4;
+
+    @screen md {
+      @apply mt-8;
+    }
+
+    @screen lg {
+      @apply mt-14;
+    }
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  pre[class*="language-"] {
+    @apply my-6;
+  }
+
+  a {
+    @apply text-ui-primary underline;
+  }
+
+  ul {
+    @apply list-disc;
+
+    ul {
+      list-style: circle;
+    }
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ol,
+  ul {
+    @apply ml-5;
+
+    li {
+      @apply mb-2;
+
+      p {
+        @apply mb-0;
+      }
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+  }
+
+  blockquote {
+    @apply border-l-4 border-ui-primary bg-ui-shade py-2 px-4;
+
+    p:first-child {
+      @apply mt-0;
+    }
+
+    p:last-child {
+      @apply mb-0;
+    }
+  }
+
+  code:not([class*="language-"]) {
+    @apply rounded;
+  }
+
+  pre[class*="language-"] {
+    @apply max-w-full overflow-x-auto rounded-lg;
+
+    & > code[class*="language-"] {
+      @apply border-none leading-relaxed;
+    }
+  }
+
+  table {
+    @apply w-full overflow-hidden text-left rounded-lg shadow-sm ring-1 ring-ui-sidebar divide-y divide-ui-sidebar mb-4;
+
+    thead {
+      @apply bg-ui-light font-semibold text-xs text-ui-secondary tracking-wider uppercase;
+    }
+
+    tbody {
+      @apply divide-y divide-ui-sidebar;
+    }
+
+    th {
+      @apply p-2;
+    }
+
+    td {
+      @apply p-2 text-sm bg-ui-background border-ui-border leading-relaxed;
+    }
+  }
+}
+</style>

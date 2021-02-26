@@ -1,5 +1,4 @@
 import Layout from "~/layouts/App.vue";
-import "../src/layouts/App.scss";
 
 export default function(Vue, { router, head }) {
   Vue.component("Layout", Layout);
