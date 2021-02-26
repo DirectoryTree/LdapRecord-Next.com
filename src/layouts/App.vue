@@ -14,8 +14,9 @@
       >
         <aside
           v-if="hasSidebar"
-          class="sidebar h-screen top-16"
+          class="sidebar top-16"
           :class="{ open: sidebarOpen }"
+          style="height: calc(100vh - 4rem)"
         >
           <div class="w-full pb-16 bg-ui-background">
             <Sidebar
