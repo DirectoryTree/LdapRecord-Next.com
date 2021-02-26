@@ -1,3 +1,4 @@
 [submodule "docs"]
-	path = content/docs
+	path = docs
 	url = https://github.com/DirectoryTree/LdapRecord-Docs
+branch = master
