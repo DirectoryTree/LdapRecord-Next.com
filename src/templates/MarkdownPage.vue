@@ -158,6 +158,10 @@ export default {
     },
 
     makeTablesResponsive() {
+      if (!process.isClient) {
+        return;
+      }
+
       this.$nextTick(() => {
         document.documentElement
           .getElementsByTagName("table")
