@@ -318,13 +318,11 @@ export default {
   },
 
   metaInfo() {
-    const title = "A framework for rapid LDAP integration.";
-
     const description =
       "LdapRecord is a framework that helps you quickly integrate LDAP into  your PHP applications.";
 
     return {
-      title: title,
+      title: "A framework for rapid LDAP integration.",
       meta: [
         {
           name: "description",
@@ -333,12 +331,12 @@ export default {
         {
           key: "og:title",
           name: "og:title",
-          content: title,
+          content: "LdapRecord",
         },
         {
           key: "twitter:title",
           name: "twitter:title",
-          content: title,
+          content: "LdapRecord",
         },
         {
           key: "og:description",
