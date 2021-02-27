@@ -105,9 +105,14 @@ export default {
     this.setRepository();
   },
 
+  mounted() {
+    this.makeTablesResponsive();
+  },
+
   watch: {
     $route() {
       this.setRepository();
+      this.makeTablesResponsive();
     },
   },
 
@@ -150,6 +155,24 @@ export default {
 
       this.currentVersion = version;
       this.repository = this.repositories.find((r) => r.name === repository);
+    },
+
+    makeTablesResponsive() {
+      this.$nextTick(() => {
+        document.documentElement
+          .getElementsByTagName("table")
+          .forEach((table) => {
+            const wrapper = document.createElement("div");
+
+            wrapper.classList = ["ring-1 ring-ui-sidebar rounded-lg mb-4"];
+
+            wrapper.style.overflowX = "scroll";
+
+            table.parentNode.insertBefore(wrapper, table);
+
+            wrapper.appendChild(table);
+          });
+      });
     },
   },
 
@@ -272,7 +295,7 @@ export default {
   }
 
   table {
-    @apply w-full overflow-hidden text-left rounded-lg shadow-sm ring-1 ring-ui-sidebar divide-y divide-ui-sidebar mb-4;
+    @apply w-full overflow-hidden text-left rounded-lg shadow-sm ring-1 ring-ui-sidebar divide-y divide-ui-sidebar;
 
     thead {
       @apply bg-ui-light font-semibold text-xs text-ui-secondary tracking-wider uppercase;
