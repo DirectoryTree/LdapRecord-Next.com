@@ -245,14 +245,16 @@ foreach ($groups as $group) {
           </span>
         </h2>
 
-        <div class="mt-8 flex justify-center">
+        <div
+          class="mt-8 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0"
+        >
           <div class="inline-flex rounded-md">
             <Button to="/docs/core/v2/quickstart">
               Quickstart
             </Button>
           </div>
 
-          <div class="ml-3 inline-flex">
+          <div class="md:ml-3 inline-flex">
             <Button
               variant="secondary"
               class="border-ui-border"
