@@ -14,7 +14,7 @@
 
         <div class="w-full px-2 sm:px-4 max-w-screen-xs">
           <ClientOnly>
-            <Search />
+            <Search v-if="search" />
           </ClientOnly>
         </div>
 
@@ -125,6 +125,13 @@ export default {
     TwitterIcon,
     LaravelIcon,
     OnRepository,
+  },
+
+  props: {
+    search: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {

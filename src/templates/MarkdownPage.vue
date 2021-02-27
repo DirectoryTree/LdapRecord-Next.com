@@ -1,5 +1,5 @@
 <template>
-  <Layout container>
+  <Layout container search>
     <div class="flex flex-wrap items-start justify-start">
       <div
         style="top: 4rem"

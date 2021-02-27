@@ -5,7 +5,7 @@
         ref="header"
         class="sticky top-0 z-20 w-full bg-ui-background h-16"
       >
-        <LayoutHeader />
+        <LayoutHeader :search="search" />
       </header>
 
       <main
@@ -67,6 +67,10 @@ import { MenuIcon, XIcon } from "vue-feather-icons";
 export default {
   props: {
     container: {
+      type: Boolean,
+      default: false,
+    },
+    search: {
       type: Boolean,
       default: false,
     },
