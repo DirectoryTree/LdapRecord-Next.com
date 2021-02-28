@@ -39,6 +39,10 @@
 
         <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
           <NextPrevLinks />
+
+          <div class="flex justify-end">
+            <EditOnGitHubButton :to="editOnGitHubUrl" />
+          </div>
         </div>
       </div>
     </div>
@@ -49,6 +53,7 @@
 query {
  	metadata {
     settings {
+      docsUrl
       repositories {
         name
         url
@@ -67,18 +72,21 @@ query {
 query ($id: ID!) {
   markdownPage(id: $id) {
     id
-    title
-    description
     path
-    timeToRead
+    title
     content
+    timeToRead
+    description
     headings {
       depth
       value
       anchor
     }
+    fileInfo {
+      path
+    }
   }
-  allMarkdownPage{
+  allMarkdownPage {
     edges {
       node {
         path
@@ -93,12 +101,14 @@ query ($id: ID!) {
 import { AlertCircleIcon } from "vue-feather-icons";
 import OnThisPage from "@/components/OnThisPage.vue";
 import NextPrevLinks from "@/components/NextPrevLinks.vue";
+import EditOnGitHubButton from "@/components/EditOnGitHubButton";
 
 export default {
   components: {
     OnThisPage,
     NextPrevLinks,
     AlertCircleIcon,
+    EditOnGitHubButton,
   },
 
   created() {
@@ -136,8 +146,22 @@ export default {
       return this.repository.versions[this.repository.versions.length - 1];
     },
 
+    currentVersionDocsUri() {
+      return this.repository.versions.find(
+        ({ slug }) => slug === this.currentVersion
+      ).docsUri;
+    },
+
     repositories() {
       return this.$static.metadata.settings.repositories;
+    },
+
+    editOnGitHubUrl() {
+      return (
+        this.$static.metadata.settings.docsUrl +
+        "/" +
+        this.$page.markdownPage.fileInfo.path
+      );
     },
   },
 

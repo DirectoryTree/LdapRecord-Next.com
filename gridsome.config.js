@@ -8,6 +8,7 @@ module.exports = {
     ? process.env.SITE_URL
     : "https://ldaprecord.com",
   settings: {
+    docsUrl: "https://github.com/DirectoryTree/LdapRecord-Docs/blob/master",
     sidebars: [
       {
         name: "core",
@@ -42,13 +43,13 @@ module.exports = {
         url: "https://github.com/DirectoryTree/LdapRecord",
         versions: [
           {
-            name: "v1.x",
             slug: "v1",
+            name: "v1.x",
             uri: "/docs/core/v1",
           },
           {
-            name: "v2.x",
             slug: "v2",
+            name: "v2.x",
             uri: "/docs/core/v2",
           },
         ],
@@ -58,13 +59,13 @@ module.exports = {
         url: "https://github.com/DirectoryTree/LdapRecord-Laravel",
         versions: [
           {
-            name: "v1.x",
             slug: "v1",
+            name: "v1.x",
             uri: "/docs/laravel/v1",
           },
           {
-            name: "v2.x",
             slug: "v2",
+            name: "v2.x",
             uri: "/docs/laravel/v2",
           },
         ],
