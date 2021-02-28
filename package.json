@@ -16,6 +16,7 @@
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "autoprefixer": "^9.8.6",
     "babel-runtime": "^6.26.0",
+    "compare-versions": "^3.6.0",
     "fuse.js": "^3.4.6",
     "gridsome": "^0.7.0",
     "gridsome-plugin-tailwindcss": "^2.2.36",

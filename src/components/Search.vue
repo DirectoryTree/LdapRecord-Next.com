@@ -77,8 +77,21 @@
 </template>
 
 <static-query>
-query Search {
-   allMarkdownPage{
+query {
+  metadata {
+    settings {
+      repositories {
+        name
+        url
+        versions {
+          name
+          slug
+          uri
+        }
+      }
+    }
+  }
+  allMarkdownPage{
     edges {
       node {
         id
@@ -97,19 +110,20 @@ query Search {
 
 <script>
 import Fuse from "fuse.js";
+import compareVersions from "compare-versions";
 import { ChevronRightIcon, SearchIcon } from "vue-feather-icons";
 
 export default {
   components: {
-    ChevronRightIcon,
     SearchIcon,
+    ChevronRightIcon,
   },
 
   data() {
     return {
       query: "",
-      focusIndex: -1,
       focused: false,
+      focusIndex: -1,
     };
   },
 
@@ -123,32 +137,18 @@ export default {
       return fuse.search(this.query).slice(0, 15);
     },
 
+    pages() {
+      return this.$static.allMarkdownPage.edges.map((edge) => edge.node);
+    },
+
+    repositories() {
+      return this.$static.metadata.settings.repositories;
+    },
+
     headings() {
       let result = [];
 
-      const route = require("path-match")({
-        sensitive: false,
-        strict: false,
-        end: false,
-      });
-
-      const { repository, version } = route("/docs/:repository/:version/")(
-        this.$route.path
-      );
-
-      const allPages = this.$static.allMarkdownPage.edges
-        .map((edge) => edge.node)
-        .filter((page) => {
-          const params = route("/docs/:repository/:version")(page.path);
-
-          if (!params) {
-            return false;
-          }
-
-          const { repository: pageRepository, version: pageVersion } = params;
-
-          return pageRepository === repository && pageVersion === version;
-        });
+      const allPages = this.filterMatchingPages(this.pages);
 
       // Create the array of all headings of all pages.
       allPages.forEach((page) => {
@@ -204,8 +204,66 @@ export default {
       this.$refs.input.blur();
       this.query = "";
     },
+
+    filterMatchingPages(pages) {
+      let repositories = this.getSearchableRepositories();
+
+      return pages.filter((page) => {
+        const params = this.getRouteParams(page.path);
+
+        if (!params) {
+          return false;
+        }
+
+        const { repository: pageRepository, version: pageVersion } = params;
+
+        return repositories.find(
+          ({ name, latest }) =>
+            name === pageRepository && pageVersion === latest
+        );
+      });
+    },
+
+    getSearchableRepositories() {
+      // If a search is being executed on the home page, we will
+      // grab a list of all the repositories along with their
+      // most current version to filter our page result.
+      if (this.isOnHomePage()) {
+        return this.repositories.map(({ name, versions }) => ({
+          name: name,
+          latest: versions
+            .map(({ slug }) => slug)
+            .sort(compareVersions)
+            .reverse()[0],
+        }));
+      }
+
+      // Otherwise, the search attempt must be being made on a
+      // specific repository. In this case, we will fetch the
+      // repository through the URL, along with the version.
+      const { repository, version } = this.getRouteParams(this.$route.path);
+
+      return [
+        {
+          name: repository,
+          latest: version,
+        },
+      ];
+    },
+
+    getRouteParams(path) {
+      const route = require("path-match")({
+        sensitive: false,
+        strict: false,
+        end: false,
+      });
+
+      return route("/docs/:repository/:version/")(path);
+    },
+
+    isOnHomePage() {
+      return this.$route.path === "/";
+    },
   },
 };
 </script>
-
-<style></style>
