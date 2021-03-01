@@ -16,7 +16,7 @@
           v-if="hasSidebar"
           class="sidebar top-16"
           :class="{ open: sidebarOpen }"
-          style="height: calc(100vh - 4rem)"
+          style="min-height: calc(100vh - 4rem);min-height: --webkit-fill-available"
         >
           <div class="w-full pb-16 bg-ui-background">
             <Sidebar
