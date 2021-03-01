@@ -44,7 +44,7 @@
             class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-center"
           >
             <div class="text-ui-secondary">
-              Generated on {{ pageModifiedDate }}
+              Generated on {{ pageGeneratedDate }}
             </div>
 
             <EditOnGitHubButton :to="editOnGitHubUrl" />
@@ -141,7 +141,7 @@ export default {
   },
 
   computed: {
-    pageModifiedDate() {
+    pageGeneratedDate() {
       return new Date(this.$page.markdownPage.generatedTime).toLocaleDateString(
         "en-ca",
         {
