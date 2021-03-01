@@ -40,7 +40,11 @@
         <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
           <NextPrevLinks />
 
-          <div class="flex justify-end">
+          <div class="flex justify-between items-center">
+            <div class="text-ui-secondary">
+              Generated on {{ pageModifiedDate }}
+            </div>
+
             <EditOnGitHubButton :to="editOnGitHubUrl" />
           </div>
         </div>
@@ -64,7 +68,7 @@ query {
         }
       }
     }
-  } 
+  }
 }
 </static-query>
 
@@ -77,6 +81,7 @@ query ($id: ID!) {
     content
     timeToRead
     description
+    generatedTime
     headings {
       depth
       value
@@ -134,6 +139,18 @@ export default {
   },
 
   computed: {
+    pageModifiedDate() {
+      return new Date(this.$page.markdownPage.generatedTime).toLocaleDateString(
+        "en-ca",
+        {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          timeZone: "utc",
+        }
+      );
+    },
+
     isOnLatestVersion() {
       return this.currentVersion === this.latestVersion?.slug;
     },
@@ -186,6 +203,9 @@ export default {
         return;
       }
 
+      // Here we will make all of the tables on the current page
+      // responsive by wrapping them in a div that overflows to
+      // ensure they can be scrolled horizontally on mobile.
       this.$nextTick(() => {
         document.documentElement
           .getElementsByTagName("table")
