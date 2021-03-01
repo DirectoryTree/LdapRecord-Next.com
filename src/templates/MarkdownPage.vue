@@ -40,7 +40,9 @@
         <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
           <NextPrevLinks />
 
-          <div class="flex justify-between items-center">
+          <div
+            class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-center"
+          >
             <div class="text-ui-secondary">
               Generated on {{ pageModifiedDate }}
             </div>
