@@ -57,7 +57,7 @@
 
 <static-query>
 query {
- 	metadata {
+  metadata {
     settings {
       docsUrl
       repositories {
