@@ -1,5 +1,11 @@
 <template>
   <div ref="sidebar" class="px-4 pt-8 lg:pt-12">
+    <SidebarSection class="block lg:hidden">
+      <SidebarHeader>Repository</SidebarHeader>
+
+      <RepositorySelect class="flex items-center" />
+    </SidebarSection>
+
     <SidebarSection>
       <VersionSelect />
     </SidebarSection>
@@ -55,6 +61,7 @@ query Sidebar {
 import SidebarHeader from "@/components/SidebarHeader";
 import SidebarSection from "@/components/SidebarSection";
 import VersionSelect from "@/components/VersionSelect";
+import RepositorySelect from "@/components/RepositorySelect";
 
 export default {
   props: {
@@ -66,6 +73,7 @@ export default {
     VersionSelect,
     SidebarHeader,
     SidebarSection,
+    RepositorySelect,
   },
 
   data() {
