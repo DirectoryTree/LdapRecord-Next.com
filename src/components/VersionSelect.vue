@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SidebarHeader>Version</SidebarHeader>
+    <SidebarHeader>{{ repository.name }} Version</SidebarHeader>
 
     <span class="inline-flex shadow-sm rounded-md">
       <g-link
