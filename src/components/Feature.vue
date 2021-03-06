@@ -1,6 +1,8 @@
 <template>
   <div class="pt-6">
-    <div class="flow-root bg-ui-light rounded-lg px-6 pb-8">
+    <div
+      class="flow-root bg-ui-light ring-2 ring-ui-shade rounded-lg px-6 pb-8"
+    >
       <div class="-mt-6">
         <div>
           <span

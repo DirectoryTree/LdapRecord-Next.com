@@ -234,7 +234,7 @@ foreach ($groups as $group) {
     <div
       class="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8"
     >
-      <div class="bg-ui-shade rounded-lg shadow-lg py-8">
+      <div class="bg-ui-light ring-2 ring-ui-shade rounded-lg py-8">
         <h2 class="text-3xl tracking-tight sm:text-4xl">
           <span class="block font-extrabold text-ui-typo"
             >Ready to dive in?</span
