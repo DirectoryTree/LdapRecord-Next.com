@@ -210,13 +210,15 @@ export default {
       // ensure they can be scrolled horizontally on mobile.
       this.$nextTick(() => {
         document.documentElement
-          .getElementsByTagName("table")
+          .querySelectorAll("table:not([wrapped])")
           .forEach((table) => {
             const wrapper = document.createElement("div");
 
             wrapper.classList = ["ring-1 ring-ui-sidebar rounded-lg mb-4"];
 
             wrapper.style.overflowX = "scroll";
+
+            table.setAttribute("wrapped", "");
 
             table.parentNode.insertBefore(wrapper, table);
 
