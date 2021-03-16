@@ -251,14 +251,6 @@ blockquote {
   @apply text-base text-ui-typo;
 }
 
-:not(pre) > code {
-  @apply ring-1 ring-ui-sidebar bg-ui-light text-sm text-ui-primary px-2 py-px;
-}
-
-pre {
-  @apply overflow-auto ring-1 ring-ui-sidebar bg-ui-light p-4;
-}
-
 code,
 pre {
   text-align: left;
@@ -281,6 +273,14 @@ pre {
   @apply text-ui-typo;
   @apply text-base;
   @apply font-mono;
+}
+
+pre {
+  @apply overflow-auto ring-1 ring-ui-sidebar bg-ui-light p-4;
+}
+
+code:not(pre code) {
+  @apply ring-1 ring-ui-sidebar bg-ui-light text-sm text-ui-primary px-2 py-px;
 }
 
 .sidebar {
