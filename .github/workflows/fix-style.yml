@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  php-cs-fixer:
+  prettier-cs-fixer:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
