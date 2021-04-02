@@ -1,6 +1,6 @@
 import Layout from "~/layouts/App.vue";
 
-export default function(Vue, { router, head }) {
+export default function (Vue, { router, head }) {
   Vue.component("Layout", Layout);
 
   router.beforeEach((to, _from, next) => {
