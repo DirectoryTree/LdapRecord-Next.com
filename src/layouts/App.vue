@@ -297,6 +297,10 @@ code:not(pre code) {
   }
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .text-gradient {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
