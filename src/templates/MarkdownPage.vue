@@ -18,7 +18,7 @@
               <AlertCircleIcon class="h-5 w-5 text-ui-shade" />
             </div>
 
-            <div class="ml-3 flex-1 md:flex md:justify-between">
+            <div class="flex-1 md:flex md:justify-between items-center ml-3">
               <p class="font-medium text-sm text-ui-shade">
                 You're browsing documentation for an old version.
               </p>
@@ -26,7 +26,7 @@
               <p class="mt-3 text-sm md:mt-0 md:ml-6">
                 <g-link
                   :to="latestVersionUri"
-                  class="whitespace-nowrap font-medium text-ui-shade"
+                  class="whitespace-nowrap font-bold text-ui-shade"
                 >
                   View Current <span aria-hidden="true">&rarr;</span>
                 </g-link>
