@@ -19,7 +19,6 @@
         type="search"
         :value="query"
         class="block w-full py-2 pl-10 pr-4 border-2 rounded-lg bg-ui-sidebar border-ui-sidebar focus:bg-ui-background focus:outline-none focus:ring-2 focus:ring-ui-primary focus:border-transparent"
-        :class="{ 'rounded-b-none': showResult }"
         placeholder="Search Documentation..."
         @focus="focused = true"
         @blur="focused = false"
@@ -33,7 +32,7 @@
 
     <div
       v-if="showResult"
-      class="fixed inset-x-0 z-50 overflow-y-auto border-2 border-t-0 rounded-lg rounded-t-none shadow-lg results bg-ui-background bottom:0 sm:bottom-auto sm:absolute border-ui-sidebar"
+      class="fixed inset-x-0 z-50 overflow-y-auto border-2 rounded-t-none md:rounded-t-lg rounded-lg shadow-lg results bg-ui-background bottom:0 sm:bottom-auto sm:absolute border-ui-primary mt-2 md:mt-0"
       style="max-height: calc(100vh - 120px)"
     >
       <ul class="px-4 py-2 m-0">

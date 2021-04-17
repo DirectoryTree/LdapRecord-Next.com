@@ -1,5 +1,5 @@
 {
-  "name": "LdapRecord-Next.com",
+  "name": "ldaprecord.com",
   "private": true,
   "scripts": {
     "build": "gridsome build",
