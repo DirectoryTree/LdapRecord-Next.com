@@ -1,7 +1,7 @@
 import PortalVue from "portal-vue";
 import Layout from "~/layouts/App.vue";
 
-export default function(Vue, { router, head }) {
+export default function (Vue, { router, head }) {
   Vue.use(PortalVue);
   Vue.component("Layout", Layout);
 
