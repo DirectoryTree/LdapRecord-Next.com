@@ -1,10 +1,7 @@
 <template>
-  <div
-    @keydown.down="increment"
-    @keydown.up="decrement"
-    @keydown.enter="go"
-    class="relative"
-  >
+  <div class="relative">
+    <search-modal :show="show" @close="show = false" />
+
     <label class="relative block">
       <span class="sr-only">Search Documentation</span>
 
@@ -14,255 +11,33 @@
         <SearchIcon size="1.25x" class="text-ui-typo" />
       </div>
 
-      <input
-        ref="input"
-        type="search"
-        :value="query"
+      <button
+        type="button"
+        tabindex="-1"
+        @click="show = true"
         class="block w-full py-2 pl-10 pr-4 border-2 rounded-lg bg-ui-sidebar border-ui-sidebar focus:bg-ui-background focus:outline-none focus:ring-2 focus:ring-ui-primary focus:border-transparent"
-        placeholder="Search Documentation..."
-        @focus="focused = true"
-        @blur="focused = false"
-        @input="
-          focusIndex = -1;
-          query = $event.target.value;
-        "
-        @change="query = $event.target.value"
-      />
+      >
+        Search Documentation...
+      </button>
     </label>
-
-    <div
-      v-if="showResult"
-      class="fixed inset-x-0 z-50 overflow-y-auto border-2 rounded-t-none md:rounded-t-lg rounded-lg shadow-lg results bg-ui-background bottom:0 sm:bottom-auto sm:absolute border-ui-primary mt-2 md:mt-0"
-      style="max-height: calc(100vh - 120px)"
-    >
-      <ul class="px-4 py-2 m-0">
-        <li v-if="results.length === 0" class="px-2">
-          No results for <span class="font-bold">{{ query }}</span
-          >.
-        </li>
-
-        <li
-          v-else
-          v-for="(result, index) in results"
-          :key="result.path + result.anchor"
-          @mouseenter="focusIndex = index"
-          @mousedown="go"
-          class="border-ui-sidebar"
-          :class="{
-            'border-b': index + 1 !== results.length,
-          }"
-        >
-          <g-link
-            :to="result.path + result.anchor"
-            class="block p-2 -mx-2 text-base font-bold rounded-lg"
-            :class="{
-              'bg-ui-sidebar text-ui-primary': focusIndex === index,
-            }"
-          >
-            <span v-if="result.value === result.title">
-              {{ result.value }}
-            </span>
-
-            <span v-else class="flex items-center">
-              {{ result.title }}
-              <ChevronRightIcon size="1x" class="mx-1" />
-              <span class="font-normal opacity-75">{{ result.value }}</span>
-            </span>
-          </g-link>
-        </li>
-      </ul>
-    </div>
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    settings {
-      repositories {
-        name
-        url
-        versions {
-          name
-          slug
-          uri
-        }
-      }
-    }
-  }
-  allMarkdownPage{
-    edges {
-      node {
-        id
-        path
-        title
-        headings {
-        	depth
-          value
-          anchor
-      	}
-      }
-    }
-  }
-}
-</static-query>
-
 <script>
-import Fuse from "fuse.js";
-import compareVersions from "compare-versions";
+import SearchModal from "@/components/SearchModal";
 import { ChevronRightIcon, SearchIcon } from "vue-feather-icons";
 
 export default {
   components: {
+    SearchModal,
     SearchIcon,
     ChevronRightIcon,
   },
 
   data() {
     return {
-      query: "",
-      focused: false,
-      focusIndex: -1,
+      show: false,
     };
-  },
-
-  computed: {
-    results() {
-      const fuse = new Fuse(this.headings, {
-        keys: ["value"],
-        threshold: 0.25,
-      });
-
-      return fuse.search(this.query).slice(0, 15);
-    },
-
-    pages() {
-      return this.$static.allMarkdownPage.edges.map((edge) => edge.node);
-    },
-
-    repositories() {
-      return this.$static.metadata.settings.repositories;
-    },
-
-    headings() {
-      let result = [];
-
-      const allPages = this.filterMatchingPages(this.pages);
-
-      // Create the array of all headings of all pages.
-      allPages.forEach((page) => {
-        page.headings.forEach((heading) => {
-          result.push({
-            ...heading,
-            path: page.path,
-            title: page.title,
-          });
-        });
-      });
-
-      return result;
-    },
-
-    showResult() {
-      // Show results, if the input is focused and the query is not empty.
-      return this.focused && this.query.length > 0;
-    },
-  },
-
-  methods: {
-    increment() {
-      if (this.focusIndex < this.results.length - 1) {
-        this.focusIndex++;
-      }
-    },
-
-    decrement() {
-      if (this.focusIndex >= 0) {
-        this.focusIndex--;
-      }
-    },
-
-    go() {
-      // Do nothing if we don't have results.
-      if (this.results.length === 0) {
-        return;
-      }
-
-      let result;
-
-      // If we don't have focus on a result, just navigate to the first one.
-      if (this.focusIndex === -1) {
-        result = this.results[0];
-      } else {
-        result = this.results[this.focusIndex];
-      }
-
-      this.$router.push(result.path + result.anchor);
-
-      // Unfocus the input and reset the query.
-      this.$refs.input.blur();
-      this.query = "";
-    },
-
-    filterMatchingPages(pages) {
-      let repositories = this.getSearchableRepositories();
-
-      return pages.filter((page) => {
-        const params = this.getRouteParams(page.path);
-
-        if (!params) {
-          return false;
-        }
-
-        const { repository: pageRepository, version: pageVersion } = params;
-
-        return repositories.find(
-          ({ name, latest }) =>
-            name === pageRepository && pageVersion === latest
-        );
-      });
-    },
-
-    getSearchableRepositories() {
-      // If a search is being executed on the home page, we will
-      // grab a list of all the repositories along with their
-      // most current version to filter our page result.
-      if (this.isOnHomePage()) {
-        return this.repositories.map(({ name, versions }) => ({
-          name: name,
-          latest: versions
-            .map(({ slug }) => slug)
-            .sort(compareVersions)
-            .reverse()[0],
-        }));
-      }
-
-      // Otherwise, the search attempt must be being made on a
-      // specific repository. In this case, we will fetch the
-      // repository through the URL, along with the version.
-      const { repository, version } = this.getRouteParams(this.$route.path);
-
-      return [
-        {
-          name: repository,
-          latest: version,
-        },
-      ];
-    },
-
-    getRouteParams(path) {
-      const route = require("path-match")({
-        sensitive: false,
-        strict: false,
-        end: false,
-      });
-
-      return route("/docs/:repository/:version/")(path);
-    },
-
-    isOnHomePage() {
-      return this.$route.path === "/";
-    },
   },
 };
 </script>

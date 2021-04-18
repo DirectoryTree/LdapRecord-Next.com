@@ -47,6 +47,8 @@
         <MenuIcon v-else />
       </button>
     </div>
+
+    <portal-target name="modal" multiple />
   </div>
 </template>
 
