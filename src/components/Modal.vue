@@ -12,6 +12,7 @@
           leave-active-class="ease-in duration-200"
           leave-class="opacity-100"
           leave-to-class="opacity-0"
+          @afterEnter="$emit('afterOpened')"
         >
           <div
             v-show="show"

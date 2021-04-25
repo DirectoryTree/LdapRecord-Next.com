@@ -4,6 +4,7 @@
     :max-width="maxWidth"
     :closeable="closeable"
     @close="close"
+    @afterOpened="$refs.input.focus()"
     role="dialog"
   >
     <div class="bg-ui-background p-4 z-50">
@@ -23,7 +24,6 @@
           </div>
 
           <input
-            autofocus
             ref="input"
             type="search"
             v-model="query"
@@ -212,7 +212,7 @@ export default {
 
     showResult() {
       // Show results, if the input is focused and the query is not empty.
-      return this.focused && this.query.length > 0;
+      return this.query.length > 0;
     },
   },
 
