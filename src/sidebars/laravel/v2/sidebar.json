@@ -98,6 +98,7 @@
       { "name": "Lumen", "path": "/docs/laravel/v2/lumen" },
       { "name": "Events", "path": "/docs/laravel/v2/events" },
       { "name": "Testing", "path": "/docs/laravel/v2/testing" },
+      { "name": "Extending", "path": "/docs/laravel/v2/extending" },
       { "name": "Debugging", "path": "/docs/laravel/v2/debugging" },
       { "name": "Importing Objects", "path": "/docs/laravel/v2/importing" }
     ]
