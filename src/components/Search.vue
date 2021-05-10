@@ -19,6 +19,12 @@
       >
         Search Documentation...
       </button>
+
+      <div
+        class="absolute inset-y-0 right-0 flex items-center justify-center px-3 py-2 opacity-50"
+      >
+        <kbd>/</kbd>
+      </div>
     </label>
   </div>
 </template>
@@ -38,6 +44,20 @@ export default {
     return {
       show: false,
     };
+  },
+
+  created() {
+    const openSearchOnSlash = (e) => {
+      if (e.key === "/") {
+        this.show = true;
+      }
+    };
+
+    document.addEventListener("keydown", openSearchOnSlash);
+
+    this.$once("hook:destroyed", () => {
+      document.removeEventListener("keydown", openSearchOnSlash);
+    });
   },
 };
 </script>

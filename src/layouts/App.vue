@@ -285,6 +285,10 @@ code:not(pre code) {
   @apply ring-1 ring-ui-sidebar bg-ui-light text-sm text-ui-primary px-2 py-px;
 }
 
+kbd {
+  @apply bg-ui-background py-1 px-2 rounded shadow border;
+}
+
 .sidebar {
   @apply fixed bg-ui-background px-4 inset-x-0 bottom-0 w-full overflow-y-auto transition-all z-40;
   transform: translateX(-100%);

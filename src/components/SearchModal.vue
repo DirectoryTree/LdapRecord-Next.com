@@ -161,12 +161,6 @@ export default {
   },
 
   watch: {
-    show(showing) {
-      if (showing && this.$refs.input) {
-        this.$refs.input.focus();
-      }
-    },
-
     query() {
       // Reset the focus index when the search query changes.
       this.focusIndex = -1;
@@ -322,9 +316,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-kbd {
-  @apply bg-ui-background py-1 px-2 rounded shadow border;
-}
-</style>
