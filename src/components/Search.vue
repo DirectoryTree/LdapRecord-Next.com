@@ -17,7 +17,7 @@
         @click="show = true"
         class="block w-full py-2 pl-10 pr-4 border-2 rounded-lg bg-ui-sidebar border-ui-sidebar focus:bg-ui-background focus:outline-none focus:ring-2 focus:ring-ui-primary focus:border-transparent"
       >
-        Search Documentation...
+        Search<span class="hidden md:block"> Documentation</span>...
       </button>
 
       <div
