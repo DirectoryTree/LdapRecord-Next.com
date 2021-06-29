@@ -21,7 +21,7 @@
       </button>
 
       <div
-        class="absolute inset-y-0 right-0 flex items-center justify-center px-3 py-2 opacity-50"
+        class="absolute inset-y-0 right-0 hidden md:flex items-center justify-center px-3 py-2 opacity-50"
       >
         <kbd>/</kbd>
       </div>
