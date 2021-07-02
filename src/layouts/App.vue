@@ -250,7 +250,7 @@ ul,
 pre,
 strong,
 blockquote {
-  @apply text-base text-ui-typo;
+  @apply text-base text-ui-typo leading-7;
 }
 
 code,
@@ -260,8 +260,7 @@ pre {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 0.8rem;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -272,9 +271,7 @@ pre {
   -ms-hyphens: none;
   hyphens: none;
 
-  @apply text-ui-typo;
-  @apply text-base;
-  @apply font-mono;
+  @apply text-ui-typo leading-6 font-mono;
 }
 
 pre {
