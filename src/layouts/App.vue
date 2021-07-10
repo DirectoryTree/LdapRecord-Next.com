@@ -253,6 +253,10 @@ blockquote {
   @apply text-base text-ui-typo leading-7;
 }
 
+blockquote > ul:last-child {
+  @apply mb-0;
+}
+
 code,
 pre {
   text-align: left;
