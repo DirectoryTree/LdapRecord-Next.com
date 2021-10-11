@@ -18,8 +18,8 @@
           </ClientOnly>
         </div>
 
-        <div class="flex items-center flex-nowrap justify-end px-2 sm:px-4">
-          <RepositorySelect class="hidden lg:flex items-center" />
+        <div class="flex items-center justify-end px-2 flex-nowrap sm:px-4">
+          <RepositorySelect class="items-center hidden lg:flex" />
 
           <ToggleDarkMode class="ml-0 lg:ml-8">
             <template #default="{ dark }">

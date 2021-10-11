@@ -7,12 +7,12 @@
         'lg:flex-row-reverse': alternate,
       }"
     >
-      <div class="w-full lg:w-1/2 px-4 mx-auto">
+      <div class="w-full px-4 mx-auto lg:w-1/2">
         <div>
-          <div class="flex lg:flex-col items-center lg:items-start">
+          <div class="flex items-center lg:flex-col lg:items-start">
             <div class="mr-2">
               <span
-                class="h-12 w-12 rounded-md flex items-center justify-center bg-ui-primary"
+                class="flex items-center justify-center w-12 h-12 rounded-md bg-ui-primary"
               >
                 <slot name="icon"></slot>
               </span>
@@ -20,7 +20,7 @@
 
             <div class="lg:mt-6">
               <h2
-                class="text-3xl lg:text-6xl font-extrabold tracking-tight leading-none text-ui-typo m-0"
+                class="m-0 text-3xl font-extrabold leading-none tracking-tight lg:text-6xl text-ui-typo"
               >
                 {{ title }}
 
@@ -40,7 +40,7 @@
           <div class="mt-6" v-if="link && href">
             <a
               :href="href"
-              class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-ui-primary hover:bg-indigo-700"
+              class="inline-flex px-4 py-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-ui-primary hover:bg-indigo-700"
             >
               {{ link }}
             </a>
@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="w-full lg:w-1/2 h-full px-4 mx-auto my-6">
+      <div class="w-full h-full px-4 mx-auto my-6 lg:w-1/2">
         <slot name="content"></slot>
       </div>
     </div>

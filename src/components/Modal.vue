@@ -3,7 +3,7 @@
     <transition leave-active-class="duration-200">
       <div
         v-show="show"
-        class="fixed top-0 inset-x-0 px-4 pt-6 sm:px-0 sm:flex sm:items-top sm:justify-center z-50"
+        class="fixed inset-x-0 top-0 z-50 px-4 pt-6 sm:px-0 sm:flex sm:items-top sm:justify-center"
       >
         <transition
           enter-active-class="ease-out duration-300"
@@ -33,7 +33,7 @@
         >
           <div
             v-show="show"
-            class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full"
+            class="overflow-hidden bg-white rounded-lg shadow-xl transform transition-all sm:w-full"
             :class="maxWidthClass"
           >
             <slot />

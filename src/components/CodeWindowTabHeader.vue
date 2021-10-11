@@ -1,13 +1,13 @@
 <template>
   <div
-    class="flex flex-grow whitespace-nowrap justify-between items-center px-4 py-1 cursor-pointer code-tab"
+    class="flex items-center justify-between flex-grow px-4 py-1 cursor-pointer whitespace-nowrap code-tab"
     :class="{
       highlighted: active,
     }"
   >
-    <div class="text-ui-typo font-bold">&times;</div>
+    <div class="font-bold text-ui-typo">&times;</div>
     <div
-      class="flex-fill flex-grow ml-4 text-ui-typo font-medium text-center text-sm"
+      class="flex-grow ml-4 text-sm font-medium text-center flex-fill text-ui-typo"
     >
       <slot />
     </div>

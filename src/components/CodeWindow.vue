@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="bg-ui-sidebar flex rounded-t-md p-3 space-x-2">
-      <div class="bg-red-400 rounded-full h-3 w-3"></div>
-      <div class="bg-yellow-400 rounded-full h-3 w-3"></div>
-      <div class="bg-green-400 rounded-full h-3 w-3"></div>
+    <div class="flex p-3 bg-ui-sidebar rounded-t-md space-x-2">
+      <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+      <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+      <div class="w-3 h-3 bg-green-400 rounded-full"></div>
     </div>
 
     <div class="flex justify-between overflow-x-scroll">

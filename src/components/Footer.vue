@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="d-flex flex-col justify-center items-center m-0 py-8 text-center text-base text-gray-400"
+    class="flex-col items-center justify-center py-8 m-0 text-base text-center text-gray-400 d-flex"
   >
     <g-link to="https://github.com/directorytree">
       <DirectoryTreeSvg

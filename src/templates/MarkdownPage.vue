@@ -3,7 +3,7 @@
     <div class="flex flex-wrap items-start justify-start">
       <div
         style="top: 4rem"
-        class="sticky overflow-y-scroll max-h-screen order-2 w-full md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8 pb-8"
+        class="sticky order-2 w-full max-h-screen pb-8 overflow-y-scroll md:w-1/3 sm:pl-4 md:pl-6 lg:pl-8"
       >
         <OnThisPage />
       </div>
@@ -11,22 +11,22 @@
       <div class="order-1 w-full md:w-2/3">
         <div
           v-if="!isOnLatestVersion"
-          class="bg-ui-primary rounded-md p-4 my-8"
+          class="p-4 my-8 bg-ui-primary rounded-md"
         >
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <AlertCircleIcon class="h-5 w-5 text-ui-shade" />
+              <AlertCircleIcon class="w-5 h-5 text-ui-shade" />
             </div>
 
-            <div class="flex-1 md:flex md:justify-between items-center ml-3">
-              <p class="font-medium text-sm text-ui-shade">
+            <div class="items-center flex-1 ml-3 md:flex md:justify-between">
+              <p class="text-sm font-medium text-ui-shade">
                 You're browsing documentation for an old version.
               </p>
 
               <p class="mt-3 text-sm md:mt-0 md:ml-6">
                 <g-link
                   :to="latestVersionUri"
-                  class="whitespace-nowrap font-bold text-ui-shade"
+                  class="font-bold whitespace-nowrap text-ui-shade"
                 >
                   View Current <span aria-hidden="true">&rarr;</span>
                 </g-link>
@@ -37,11 +37,11 @@
 
         <div class="content" v-html="$page.markdownPage.content" />
 
-        <div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border">
+        <div class="pt-8 mt-8 border-t lg:mt-12 lg:pt-12 border-ui-border">
           <NextPrevLinks />
 
           <div
-            class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-center"
+            class="flex flex-col items-center justify-between md:flex-row space-y-4 md:space-y-0"
           >
             <div class="text-ui-secondary">
               Generated on {{ pageGeneratedDate }}

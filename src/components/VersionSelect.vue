@@ -12,7 +12,7 @@
           'rounded-r-lg': index === repository.versions.length - 1,
           active: currentVersion === version.slug,
         }"
-        class="version-btn inline-flex items-center px-6 py-2 border border-ui-border text-sm font-medium focus:z-10 focus:outline-none focus:ring-1 focus:ring-ui-primary focus:border-ui-primary"
+        class="inline-flex items-center px-6 py-2 text-sm font-medium border version-btn border-ui-border focus:z-10 focus:outline-none focus:ring-1 focus:ring-ui-primary focus:border-ui-primary"
       >
         {{ version.name }}
       </g-link>

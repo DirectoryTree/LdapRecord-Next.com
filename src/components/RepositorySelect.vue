@@ -30,7 +30,7 @@
         target="_blank"
         rel="noopener noreferrer"
         name="Core GitHub Repository"
-        class="inline-flex text-ui-typo hover:text-ui-primary ml-3 whitespace-nowrap"
+        class="inline-flex ml-3 text-ui-typo hover:text-ui-primary whitespace-nowrap"
       >
         <GithubIcon size="1.5x" class="mr-1" />
         <span>GitHub</span>
@@ -43,7 +43,7 @@
         target="_blank"
         rel="noopener noreferrer"
         name="Larvel GitHub Repository"
-        class="inline-flex text-ui-typo hover:text-ui-primary ml-3 whitespace-nowrap"
+        class="inline-flex ml-3 text-ui-typo hover:text-ui-primary whitespace-nowrap"
       >
         <GithubIcon size="1.5x" class="mr-1" />
         <span>GitHub</span>

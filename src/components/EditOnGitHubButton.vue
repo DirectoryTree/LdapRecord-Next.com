@@ -1,10 +1,10 @@
 <template>
   <g-link
     :to="to"
-    class="inline-flex text-base font-medium leading-6 text-gray-100 whitespace-no-wrap"
+    class="inline-flex text-base font-medium text-gray-100 whitespace-no-wrap leading-6"
   >
     <span
-      class="inline-flex items-center justify-center px-4 py-2 bg-ui-primary border border-transparent rounded-r-none rounded-md"
+      class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-r-none bg-ui-primary rounded-md"
     >
       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
         <path

@@ -22,7 +22,7 @@
           :id="page.path"
           :key="page.path"
           v-for="page in section.items"
-          class="-ml-2 pl-2 text-sm font-semibold rounded-lg"
+          class="pl-2 -ml-2 text-sm font-semibold rounded-lg"
           :class="getClassesForAnchor(page)"
           @mousedown="$emit('navigate')"
         >

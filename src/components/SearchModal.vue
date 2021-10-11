@@ -7,7 +7,7 @@
     @afterOpened="$refs.input.focus()"
     role="dialog"
   >
-    <div class="bg-ui-background p-4 z-50">
+    <div class="z-50 p-4 bg-ui-background">
       <div
         @keydown.down="increment"
         @keydown.up="decrement"
@@ -36,7 +36,7 @@
 
         <div
           v-if="showResult"
-          class="overflow-y-auto results mt-2 md:mt-0"
+          class="mt-2 overflow-y-auto results md:mt-0"
           style="max-height: calc(100vh - 120px)"
         >
           <ul class="p-2 m-0">
@@ -82,7 +82,7 @@
       </div>
     </div>
 
-    <div class="p-4 bg-ui-sidebar flex justify-between text-xs">
+    <div class="flex justify-between p-4 text-xs bg-ui-sidebar">
       <div><kbd>↵</kbd> to select</div>
 
       <div class="space-x-1">
