@@ -10,6 +10,7 @@
     "items": [
       { "name": "Overview", "path": "/docs/laravel/v2" },
       { "name": "Installation", "path": "/docs/laravel/v2/installation" },
+      { "name": "Configuration", "path": "/docs/laravel/v2/configuration" },
       { "name": "Usage", "path": "/docs/laravel/v2/usage" }
     ]
   },
