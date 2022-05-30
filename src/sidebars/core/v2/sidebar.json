@@ -50,7 +50,7 @@
     "items": [
       { "name": "Authentication", "path": "/docs/core/v2/authentication" },
       { "name": "Common Queries", "path": "/docs/core/v2/common-queries" },
-      { "name": "Filter Parser", "path": "/docs/core/v2/filter-parser" }
+      { "name": "Filter Parser", "path": "/docs/core/v2/filter-parser" },
       { "name": "Helpers", "path": "/docs/core/v2/helpers" },
       { "name": "Caching", "path": "/docs/core/v2/caching" },
       { "name": "Events", "path": "/docs/core/v2/events" },
