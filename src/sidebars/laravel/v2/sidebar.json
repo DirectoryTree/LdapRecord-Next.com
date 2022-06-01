@@ -87,7 +87,7 @@
     ]
   },
   {
-    "name": "SSO Authentication",
+    "name": "SSO Auth",
     "items": [
       { "name": "Overview", "path": "/docs/laravel/v2/auth/sso" },
       { "name": "Setup", "path": "/docs/laravel/v2/auth/sso/setup" }
