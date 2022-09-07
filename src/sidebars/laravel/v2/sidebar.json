@@ -83,6 +83,10 @@
       {
         "name": "Laravel Jetstream",
         "path": "/docs/laravel/v2/auth/database/laravel-jetstream"
+      },
+      {
+        "name": "Laravel Sanctum",
+        "path": "/docs/laravel/v2/auth/database/laravel-sanctum"
       }
     ]
   },
