@@ -1,3 +1,5 @@
+const tailwind = require("tailwindcss");
+
 module.exports = {
   siteName: "LdapRecord",
   icon: {
@@ -88,17 +90,6 @@ module.exports = {
       },
     },
     {
-      use: "gridsome-plugin-tailwindcss",
-      options: {
-        tailwindConfig: "./tailwind.config.js",
-        shouldImport: true,
-        purgeConfig: {
-          // Prevent purging of prism classes.
-          whitelistPatternsChildren: [/token$/],
-        },
-      },
-    },
-    {
       use: "@gridsome/plugin-google-analytics",
       options: {
         id: process.env.GA_ID ? process.env.GA_ID : "XX-999999999-9",
@@ -109,6 +100,13 @@ module.exports = {
       options: {},
     },
   ],
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [tailwind()],
+      },
+    },
+  },
   chainWebpack: (config) => {
     const svgRule = config.module.rule("svg");
 

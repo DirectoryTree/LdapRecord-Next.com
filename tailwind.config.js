@@ -1,10 +1,5 @@
 module.exports = {
-  purge: {
-    content: ["./src/**/*.vue", "./src/**/*.scss"],
-    options: {
-      safelist: [/token$/],
-    },
-  },
+  content: ["./src/**/*.vue", "./src/**/*.scss"],
   theme: {
     extend: {
       colors: {

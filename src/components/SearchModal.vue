@@ -4,7 +4,7 @@
     :max-width="maxWidth"
     :closeable="closeable"
     @close="close"
-    @afterOpened="$refs.input.focus()"
+    @afterOpened="focusSearchInput"
     role="dialog"
   >
     <div class="z-50 p-4 bg-ui-background">
@@ -49,7 +49,7 @@
             <li
               v-else
               v-for="(result, index) in results"
-              :key="result.path + result.anchor"
+              :key="index"
               @mouseenter="focusIndex = index"
               @mousedown="go"
               class="border-ui-sidebar"
@@ -58,23 +58,105 @@
               }"
             >
               <g-link
-                :to="result.path + result.anchor"
+                :to="url(result)"
                 class="block p-2 -mx-2 text-base font-bold rounded-lg"
                 :class="{
                   'bg-ui-sidebar text-ui-primary': focusIndex === index,
                 }"
               >
-                <span v-if="result.value === result.title">
-                  {{ result.value }}
-                </span>
+                <div
+                  v-if="result._highlightResult.hierarchy.lvl0"
+                  class="font-medium"
+                  v-html="
+                    result._highlightResult.hierarchy.lvl0
+                      ? result._highlightResult.hierarchy.lvl0.value
+                      : ''
+                  "
+                ></div>
 
-                <span v-else class="flex items-center">
-                  {{ result.title }}
-                  <ChevronRightIcon size="1x" class="mx-1" />
-                  <span class="font-normal opacity-75">
-                    {{ result.value }}
-                  </span>
-                </span>
+                <div class="mt-2">
+                  <div
+                    v-if="result._highlightResult.hierarchy.lvl1"
+                    class="text-sm"
+                  >
+                    <span class="mr-1 opacity-75 text-ui-primary">#</span>
+
+                    <span
+                      v-html="
+                        result._highlightResult.hierarchy.lvl1
+                          ? result._highlightResult.hierarchy.lvl1.value
+                          : ''
+                      "
+                    ></span>
+                  </div>
+
+                  <div
+                    v-if="result._highlightResult.hierarchy.lvl2"
+                    class="flex items-center text-sm"
+                  >
+                    <ChevronRightIcon size="1x" class="mr-1" />
+
+                    <span
+                      v-html="
+                        result._highlightResult.hierarchy.lvl2
+                          ? result._highlightResult.hierarchy.lvl2.value
+                          : ''
+                      "
+                    ></span>
+                  </div>
+
+                  <div
+                    v-if="result._highlightResult.hierarchy.lvl3"
+                    class="flex items-center text-sm"
+                  >
+                    <ChevronRightIcon size="1x" class="mr-1" />
+                    <span
+                      v-html="
+                        result._highlightResult.hierarchy.lvl3
+                          ? result._highlightResult.hierarchy.lvl3.value
+                          : ''
+                      "
+                    ></span>
+                  </div>
+
+                  <div
+                    v-if="result._highlightResult.hierarchy.lvl4"
+                    class="flex items-center text-sm"
+                  >
+                    <ChevronRightIcon size="1x" class="mr-1" />
+                    <span
+                      v-html="
+                        result._highlightResult.hierarchy.lvl4
+                          ? result._highlightResult.hierarchy.lvl4.value
+                          : ''
+                      "
+                    ></span>
+                  </div>
+
+                  <div
+                    v-if="result._highlightResult.hierarchy.lvl5"
+                    class="flex items-center text-sm"
+                  >
+                    <ChevronRightIcon size="1x" class="mr-1" />
+                    <span
+                      v-html="
+                        result._highlightResult.hierarchy.lvl5
+                          ? result._highlightResult.hierarchy.lvl5.value
+                          : ''
+                      "
+                    ></span>
+                  </div>
+
+                  <div
+                    v-if="result._highlightResult.content"
+                    v-html="
+                      result._highlightResult.content
+                        ? result._highlightResult.content.value
+                        : ''
+                    "
+                    class="h-6 p-2 overflow-hidden text-xs font-normal truncate rounded-lg bg-gray-50"
+                  ></div>
+                </div>
               </g-link>
             </li>
           </ul>
@@ -96,40 +178,27 @@
 </template>
 
 <static-query>
-query {
-  metadata {
-    settings {
-      repositories {
-        name
-        url
-        versions {
+  query {
+    metadata {
+      settings {
+        repositories {
           name
-          slug
-          uri
+          url
+          versions {
+            name
+            slug
+            uri
+          }
         }
       }
     }
   }
-  allMarkdownPage{
-    edges {
-      node {
-        id
-        path
-        title
-        headings {
-        	depth
-          value
-          anchor
-      	}
-      }
-    }
-  }
-}
 </static-query>
 
 <script>
-import Fuse from "fuse.js";
 import Modal from "@/components/Modal";
+import "@algolia/autocomplete-theme-classic";
+import algoliasearch from "algoliasearch/lite";
 import compareVersions from "compare-versions";
 import { ChevronRightIcon, SearchIcon } from "vue-feather-icons";
 
@@ -153,55 +222,55 @@ export default {
   },
 
   data() {
+    const searchClient = algoliasearch(
+      "PI1KDYBNL6",
+      "4dc830abe75ea273362c312fd8544b51"
+    );
+
+    const index = searchClient.initIndex("ldaprecord");
+
     return {
+      index,
       query: "",
+      results: [],
       focused: false,
       focusIndex: -1,
+      searching: false,
     };
   },
 
   watch: {
-    query() {
+    query(value) {
+      this.searching = true;
+
       // Reset the focus index when the search query changes.
       this.focusIndex = -1;
+
+      const repositories = this.getSearchableRepositories().map(
+        ({ name }) => `repository:${name}`
+      );
+
+      const versions = this.getSearchableRepositories().map(
+        ({ latest }) => `version:${latest}`
+      );
+
+      this.index
+        .search(value, {
+          hitsPerPage: 5,
+          facetFilters: [repositories, versions],
+          highlightPreTag: '<em class="not-italic bg-ui-shade">',
+          highlightPostTag: "</em>",
+        })
+        .then(({ hits }) => {
+          this.results = hits;
+          this.searching = false;
+        });
     },
   },
 
   computed: {
-    results() {
-      const fuse = new Fuse(this.headings, {
-        keys: ["value"],
-        threshold: 0.25,
-      });
-
-      return fuse.search(this.query).slice(0, 15);
-    },
-
-    pages() {
-      return this.$static.allMarkdownPage.edges.map((edge) => edge.node);
-    },
-
     repositories() {
       return this.$static.metadata.settings.repositories;
-    },
-
-    headings() {
-      let result = [];
-
-      const allPages = this.filterMatchingPages(this.pages);
-
-      // Create the array of all headings of all pages.
-      allPages.forEach((page) => {
-        page.headings.forEach((heading) => {
-          result.push({
-            ...heading,
-            path: page.path,
-            title: page.title,
-          });
-        });
-      });
-
-      return result;
     },
 
     showResult() {
@@ -211,6 +280,12 @@ export default {
   },
 
   methods: {
+    url(result) {
+      const { pathname, hash } = new URL(result.url);
+
+      return pathname + hash;
+    },
+
     increment() {
       if (this.focusIndex < this.results.length - 1) {
         this.focusIndex++;
@@ -238,7 +313,7 @@ export default {
         result = this.results[this.focusIndex];
       }
 
-      this.$router.push(result.path + result.anchor).catch(() => {
+      this.$router.push(this.url(result)).catch(() => {
         // Redundant location.
       });
 
@@ -248,23 +323,8 @@ export default {
       this.close();
     },
 
-    filterMatchingPages(pages) {
-      let repositories = this.getSearchableRepositories();
-
-      return pages.filter((page) => {
-        const params = this.getRouteParams(page.path);
-
-        if (!params) {
-          return false;
-        }
-
-        const { repository: pageRepository, version: pageVersion } = params;
-
-        return repositories.find(
-          ({ name, latest }) =>
-            name === pageRepository && pageVersion === latest
-        );
-      });
+    focusSearchInput() {
+      this.$nextTick(() => this.$refs.input?.focus());
     },
 
     getSearchableRepositories() {
@@ -309,7 +369,7 @@ export default {
     },
 
     close() {
-      this.$refs.input.blur();
+      this.$refs.input?.blur();
 
       this.$emit("close");
     },
