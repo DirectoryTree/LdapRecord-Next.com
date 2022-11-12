@@ -154,7 +154,7 @@
                         ? result._highlightResult.content.value
                         : ''
                     "
-                    class="h-6 p-2 overflow-hidden text-xs font-normal truncate rounded-lg bg-gray-50"
+                    class="p-2 overflow-hidden text-xs font-normal truncate rounded-lg whitespace-nowrap bg-gray-50"
                   ></div>
                 </div>
               </g-link>
