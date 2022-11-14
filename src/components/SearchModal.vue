@@ -246,10 +246,6 @@ export default {
       // Reset the focus index when the search query changes.
       this.focusIndex = -1;
 
-      const repositories = this.getSearchableRepositories().map(
-        ({ name }) => `repository:${name}`
-      );
-
       const versions = this.getSearchableRepositories().map(
         ({ latest }) => `version:${latest}`
       );
@@ -257,7 +253,7 @@ export default {
       this.index
         .search(value, {
           hitsPerPage: 5,
-          facetFilters: [repositories, versions],
+          facetFilters: [versions],
           highlightPreTag: '<em class="not-italic bg-ui-shade">',
           highlightPostTag: "</em>",
         })
