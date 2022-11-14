@@ -223,11 +223,13 @@ export default {
 
   data() {
     const searchClient = algoliasearch(
-      "PI1KDYBNL6",
-      "4dc830abe75ea273362c312fd8544b51"
+      process.env.GRIDSOME_ALGOLIA_APP_ID,
+      process.env.GRIDSOME_ALGOLIA_API_KEY
     );
 
-    const index = searchClient.initIndex("ldaprecord");
+    const index = searchClient.initIndex(
+      process.env.GRIDSOME_ALGOLIA_API_INDEX
+    );
 
     return {
       index,
