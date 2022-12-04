@@ -16,7 +16,7 @@
           type="button"
           tabindex="-1"
           @click="show = true"
-          class="block w-full py-2 pl-10 pr-4 border rounded-lg bg-ui-light border-ui-border text-sm text-ui-secondary focus:bg-ui-background focus:outline-none focus:ring-2 focus:ring-ui-primary focus:border-transparent"
+          class="block w-full py-2 pl-10 pr-4 border rounded-lg bg-ui-light border-ui-border text-sm text-ui-secondary focus:bg-ui-background focus:outline-none focus:border-2 focus:border-ui-primary focus:border-transparent"
         >
           Search <span class="hidden md:inline-block">Documentation</span>...
         </button>

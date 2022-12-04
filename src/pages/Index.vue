@@ -53,7 +53,7 @@
 
                 <template #content>
                     <CodeWindow
-                        class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+                        class="overflow-hidden rounded-lg shadow-lg"
                     >
                         <CodeWindowTab
                             name="Model.php"
@@ -104,7 +104,7 @@ $user = User::create([
 
                 <template #content>
                     <CodeWindow
-                        class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+                        class="overflow-hidden rounded-lg shadow-lg"
                     >
                         <CodeWindowTab
                             name="QueryBuilder.php"
@@ -138,7 +138,7 @@ User::in('ou=office,dc=local,dc=com')
 
                 <template #content>
                     <CodeWindow
-                        class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+                        class="overflow-hidden rounded-lg shadow-lg"
                     >
                         <CodeWindowTab
                             name="Events.php"
@@ -240,11 +240,11 @@ foreach ($groups as $group) {
         <div
             class="px-4 py-12 mx-auto text-center max-w-7xl sm:px-6 lg:py-16 lg:px-8"
         >
-            <div class="py-8 rounded-lg bg-ui-light ring-2 ring-ui-shade">
+            <div class="py-8 rounded-lg bg-ui-light border border-ui-border">
                 <h2 class="text-3xl tracking-tight sm:text-4xl">
-                    <span class="block font-extrabold text-ui-typo"
-                        >Ready to dive in?</span
-                    >
+                    <span class="block font-extrabold text-ui-typo">
+                      Ready to dive in?
+                    </span>
 
                     <span class="block text-2xl text-ui-secondary">
                         Get up and running in minutes.

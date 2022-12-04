@@ -299,11 +299,11 @@ pre {
 }
 
 pre {
-  @apply overflow-auto ring-1 ring-ui-sidebar bg-ui-light p-4;
+  @apply overflow-auto border border-ui-border bg-ui-light p-4;
 }
 
 code:not(pre code) {
-  @apply ring-1 ring-ui-sidebar bg-ui-light text-sm text-ui-primary px-2 py-px;
+  @apply border border-ui-border bg-ui-light text-sm text-ui-primary px-2 py-px;
 }
 
 kbd {

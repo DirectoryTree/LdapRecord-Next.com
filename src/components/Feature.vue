@@ -1,7 +1,7 @@
 <template>
   <div class="pt-6">
     <div
-      class="px-6 pb-8 rounded-lg flow-root bg-ui-light ring-2 ring-ui-shade"
+      class="px-6 pb-8 rounded-lg flow-root bg-ui-light border border-ui-border"
     >
       <div class="-mt-6">
         <div>

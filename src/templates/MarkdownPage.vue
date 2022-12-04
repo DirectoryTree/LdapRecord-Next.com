@@ -214,7 +214,7 @@ export default {
           .forEach((table) => {
             const wrapper = document.createElement("div");
 
-            wrapper.classList = ["ring-1 ring-ui-sidebar rounded-lg mb-4"];
+            wrapper.classList = ["border border-ui-border rounded-lg mb-4"];
 
             wrapper.style.overflowX = "scroll";
 
@@ -339,7 +339,7 @@ export default {
   }
 
   pre[class*="language-"] {
-    @apply max-w-full overflow-x-auto rounded-lg;
+    @apply max-w-full overflow-x-auto rounded-lg text-lg;
 
     & > code[class*="language-"] {
       @apply border-none leading-relaxed;
@@ -347,7 +347,7 @@ export default {
   }
 
   table {
-    @apply w-full overflow-hidden text-left rounded-lg shadow-sm ring-1 ring-ui-sidebar divide-y divide-ui-sidebar;
+    @apply w-full overflow-hidden text-left rounded-lg shadow-sm border border-ui-border divide-y divide-ui-border;
 
     thead {
       @apply bg-ui-light font-semibold text-xs text-ui-secondary tracking-wider uppercase;

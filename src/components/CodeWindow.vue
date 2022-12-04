@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="border border-ui-border">
     <div class="flex p-3 bg-ui-sidebar rounded-t-md space-x-2">
       <div class="w-3 h-3 bg-red-400 rounded-full"></div>
       <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>

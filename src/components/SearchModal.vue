@@ -27,7 +27,7 @@
             ref="input"
             type="search"
             v-model="query"
-            class="block w-full py-2 pl-10 pr-4 border-2 rounded-lg bg-ui-sidebar border-ui-sidebar focus:bg-ui-background focus:outline-none focus:ring-2 focus:ring-ui-primary focus:border-transparent"
+            class="block w-full py-2 pl-10 pr-4 border rounded-lg bg-ui-sidebar border-ui-border focus:bg-ui-background focus:outline-none focus:border-ui-primary focus:border-transparent"
             placeholder="Search Documentation..."
             @focus="focused = true"
             @blur="focused = false"
