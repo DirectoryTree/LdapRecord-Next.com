@@ -335,11 +335,11 @@ export default {
   }
 
   code:not([class*="language-"]) {
-    @apply rounded;
+    @apply rounded border border-ui-border;
   }
 
   pre[class*="language-"] {
-    @apply max-w-full overflow-x-auto rounded-lg text-lg;
+    @apply max-w-full overflow-x-auto rounded-lg text-lg border border-ui-border;
 
     & > code[class*="language-"] {
       @apply border-none leading-relaxed;
