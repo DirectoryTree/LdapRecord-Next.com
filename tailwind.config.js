@@ -3,6 +3,7 @@ module.exports = {
     "./src/**/*.vue",
     "./src/**/*.scss",
   ],
+  safelist: ['backdrop-blur-xl'],
   theme: {
     extend: {
       colors: {
