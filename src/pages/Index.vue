@@ -1,5 +1,5 @@
 <template>
-    <Layout>
+    <Layout home>
         <div class="relative flex">
             <div
                 class="z-10 flex flex-col items-center max-w-4xl px-4 py-8 mx-auto text-center md:py-16"

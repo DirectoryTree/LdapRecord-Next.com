@@ -1,11 +1,11 @@
 <template>
-  <div class="py-2 border-b-4 border-ui-primary">
+  <div class="py-2">
     <div class="container">
       <div class="flex items-center justify-between -mx-2 sm:-mx-4">
         <g-link to="/" class="px-2" title="Home">
           <!--
             We'll use <img> tags to load our <svg> logos due to
-            issues of gradients conflicting with eachother on
+            issues of gradients conflicting with each other on
             some browsers, causing them not to be displayed.
           -->
           <LogoIcon :width="50" class="inline-block md:hidden" />

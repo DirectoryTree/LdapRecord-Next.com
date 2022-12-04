@@ -12,6 +12,7 @@ module.exports = {
           shade: "var(--color-ui-shade)",
           typo: "var(--color-ui-typo)",
           light: "var(--color-ui-light)",
+          info: "var(--color-ui-info)",
         },
       },
       spacing: {
@@ -26,6 +27,5 @@ module.exports = {
       padding: "1rem",
     },
   },
-  variants: {},
   plugins: [require("@tailwindcss/forms")],
 };

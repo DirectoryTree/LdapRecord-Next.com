@@ -6,7 +6,7 @@
       <div class="w-3 h-3 bg-green-400 rounded-full"></div>
     </div>
 
-    <div class="flex justify-between overflow-x-scroll">
+    <div class="flex justify-between overflow-x-scroll border-y border-ui-border divide-x divide-ui-border">
       <CodeWindowTabHeader
         v-for="tab in tabs"
         :key="tab.index"

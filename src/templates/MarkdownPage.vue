@@ -323,7 +323,7 @@ export default {
   }
 
   blockquote {
-    @apply border-l-4 border-ui-primary bg-ui-shade py-2 px-4;
+    @apply border border-ui-info bg-ui-shade py-2 px-4 shadow rounded-lg;
 
     p:first-child {
       @apply mt-0;

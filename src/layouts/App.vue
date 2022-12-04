@@ -3,7 +3,8 @@
     <div class="flex flex-col justify-start min-h-screen">
       <header
         ref="header"
-        class="sticky top-0 z-20 w-full h-16 shadow bg-ui-background"
+        :class="{'bg-ui-background': home}"
+        class="sticky top-0 z-20 w-full h-16 border-b border-ui-border backdrop-blur-xl supports-backdrop-blur:bg-white/75"
       >
         <LayoutHeader />
       </header>
@@ -69,6 +70,10 @@ import "../assets/app.css";
 
 export default {
   props: {
+    home: {
+      type: Boolean,
+      default: false,
+    },
     container: {
       type: Boolean,
       default: false,
@@ -158,6 +163,7 @@ export default {
   --color-ui-sidebar: theme("colors.gray.100");
   --color-ui-border: theme("colors.gray.300");
   --color-ui-primary: theme("colors.purple.600");
+  --color-ui-info: theme("colors.purple.200");
   --color-ui-secondary: theme("colors.gray.500");
   --color-ui-light: theme("colors.gray.50");
   --color-ui-shade: theme("colors.purple.50");
@@ -177,6 +183,7 @@ html[lights-out] {
   --color-ui-sidebar: theme("colors.gray.800");
   --color-ui-border: theme("colors.gray.800");
   --color-ui-primary: theme("colors.purple.400");
+  --color-ui-info: theme("colors.purple.700");
   --color-ui-secondary: theme("colors.gray.300");
   --color-ui-light: theme("colors.gray.800");
   --color-ui-shade: theme("colors.purple.900");
@@ -192,12 +199,6 @@ html[lights-out] {
   blockquote a {
     @apply text-ui-typo;
   }
-}
-
-* {
-  transition-property: color, background-color, border-color;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
 }
 
 h1,
@@ -306,7 +307,7 @@ code:not(pre code) {
 }
 
 kbd {
-  @apply bg-ui-background py-1 px-2 rounded shadow border;
+  @apply bg-ui-background py-1 px-2 rounded border border-ui-border;
 }
 
 .sidebar {
