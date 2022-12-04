@@ -1,5 +1,8 @@
 module.exports = {
-  content: ["./src/**/*.vue", "./src/**/*.scss"],
+  content: [
+    "./src/**/*.vue",
+    "./src/**/*.scss",
+  ],
   theme: {
     extend: {
       colors: {

@@ -3,8 +3,8 @@
     <div class="flex flex-col justify-start min-h-screen">
       <header
         ref="header"
-        :class="{'bg-ui-background': home}"
-        class="sticky top-0 z-20 w-full h-16 border-b border-ui-border backdrop-blur-xl supports-backdrop-blur:bg-white/75"
+        :class="{ 'bg-ui-background': home }"
+        class="sticky top-0 z-20 w-full h-16 border-b border-ui-border backdrop-blur-xl bg-white/75"
       >
         <LayoutHeader />
       </header>
