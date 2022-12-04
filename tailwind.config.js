@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     "./src/**/*.vue",
@@ -18,6 +20,7 @@ module.exports = {
           light: "var(--color-ui-light)",
           info: "var(--color-ui-info)",
         },
+        ...defaultTheme.colors
       },
       spacing: {
         sm: "24rem",
