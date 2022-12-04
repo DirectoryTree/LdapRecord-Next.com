@@ -4,7 +4,7 @@
       <header
         ref="header"
         :class="{ 'bg-ui-background': home }"
-        class="sticky top-0 z-20 w-full h-16 border-b border-ui-border backdrop-blur-xl bg-white/75"
+        class="sticky top-0 z-20 w-full h-16 border-b border-ui-border backdrop-blur-lg bg-white/60"
       >
         <LayoutHeader />
       </header>
