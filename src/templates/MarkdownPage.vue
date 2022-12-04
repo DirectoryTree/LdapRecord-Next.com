@@ -11,22 +11,22 @@
       <div class="order-1 w-full md:w-2/3">
         <div
           v-if="!isOnLatestVersion"
-          class="p-4 my-8 bg-ui-primary rounded-md"
+          class="p-4 my-8 border border-ui-info bg-ui-shade rounded-md"
         >
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <AlertCircleIcon class="w-5 h-5 text-ui-shade" />
+              <AlertCircleIcon class="w-5 h-5 text-ui-typo" />
             </div>
 
             <div class="items-center flex-1 ml-3 md:flex md:justify-between">
-              <p class="text-sm font-medium text-ui-shade">
+              <p class="text-sm font-medium text-ui-typo">
                 You're browsing documentation for an old version.
               </p>
 
               <p class="mt-3 text-sm md:mt-0 md:ml-6">
                 <g-link
                   :to="latestVersionUri"
-                  class="font-bold whitespace-nowrap text-ui-shade"
+                  class="font-bold whitespace-nowrap text-ui-typo"
                 >
                   View Current <span aria-hidden="true">&rarr;</span>
                 </g-link>
