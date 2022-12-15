@@ -1,4 +1,4 @@
-import Emitter from './bus';
+import Emitter from "./bus";
 import PortalVue from "portal-vue";
 import Layout from "~/layouts/App.vue";
 
