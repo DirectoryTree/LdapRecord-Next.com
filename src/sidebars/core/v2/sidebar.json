@@ -35,7 +35,8 @@
         "name": "Accessors & Mutators",
         "path": "/docs/core/v2/model-mutators"
       },
-      { "name": "API (Available Methods)", "path": "/docs/core/v2/model-api" }
+      { "name": "API (Available Methods)", "path": "/docs/core/v2/model-api" },
+      { "name": "Query API (Available Methods)", "path": "/docs/core/v2/model-searching" }
     ]
   },
   {
