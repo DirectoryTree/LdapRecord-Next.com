@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Upgrade Guide",
+    "items": [
+      { "name": "Upgrading from v2", "path": "/docs/core/v3/upgrading" }
+    ]
+  },
+  {
+    "name": "Introduction",
+    "items": [
+      { "name": "Quickstart", "path": "/docs/core/v3/quickstart" },
+      { "name": "Overview", "path": "/docs/core/v3" },
+      { "name": "Installation", "path": "/docs/core/v3/installation" },
+      { "name": "Configuration", "path": "/docs/core/v3/configuration" },
+      { "name": "Connections", "path": "/docs/core/v3/connections" }
+    ]
+  },
+  {
+    "name": "Searching",
+    "items": [
+      { "name": "Query Builder", "path": "/docs/core/v3/searching" },
+      {
+        "name": "API (Available Methods)",
+        "path": "/docs/core/v3/searching-api"
+      }
+    ]
+  },
+  {
+    "name": "Models",
+    "items": [
+      { "name": "Getting Started", "path": "/docs/core/v3/models" },
+      { "name": "Scopes", "path": "/docs/core/v3/model-scopes" },
+      { "name": "Relationships", "path": "/docs/core/v3/model-relationships" },
+      {
+        "name": "Accessors & Mutators",
+        "path": "/docs/core/v3/model-mutators"
+      },
+      { "name": "API (Available Methods)", "path": "/docs/core/v3/model-api" },
+      { "name": "Query API (Available Methods)", "path": "/docs/core/v3/model-searching" }
+    ]
+  },
+  {
+    "name": "Active Directory",
+    "items": [
+      { "name": "Users", "path": "/docs/core/v3/active-directory/users" },
+      { "name": "Groups", "path": "/docs/core/v3/active-directory/groups" }
+    ]
+  },
+  {
+    "name": "Other Features",
+    "items": [
+      { "name": "Authentication", "path": "/docs/core/v3/authentication" },
+      { "name": "Common Queries", "path": "/docs/core/v3/common-queries" },
+      { "name": "Filter Parser", "path": "/docs/core/v3/filter-parser" },
+      { "name": "Helpers", "path": "/docs/core/v3/helpers" },
+      { "name": "Caching", "path": "/docs/core/v3/caching" },
+      { "name": "Events", "path": "/docs/core/v3/events" },
+      { "name": "Logging", "path": "/docs/core/v3/logging" },
+      { "name": "Testing", "path": "/docs/core/v3/testing" }
+    ]
+  },
+  {
+    "name": "Extra",
+    "items": [
+      { "name": "Versioning", "path": "/docs/core/v3/versioning" },
+      { "name": "Credits", "path": "/docs/core/v3/credits" },
+      { "name": "License", "path": "/docs/core/v3/license" }
+    ]
+  }
+]
