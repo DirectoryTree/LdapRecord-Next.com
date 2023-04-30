@@ -1,8 +1,9 @@
 [
   {
-    "name": "Upgrade Guide",
+    "name": "Prologue",
     "items": [
-      { "name": "Upgrading from v2", "path": "/docs/core/v3/upgrading" }
+      { "name": "Release Notes", "path": "/docs/core/v3/release-notes" },
+      { "name": "Upgrade Guide", "path": "/docs/core/v3/upgrading" }
     ]
   },
   {
