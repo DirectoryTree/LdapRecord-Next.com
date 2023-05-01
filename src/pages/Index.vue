@@ -24,7 +24,7 @@
                 </p>
 
                 <div class="flex justify-center mt-8 space-x-4">
-                    <Button to="/docs/core/v2/">
+                    <Button to="/docs/core/v3/">
                         Get started
                         <ArrowRightCircleIcon class="ml-4" size="1x" />
                     </Button>
@@ -255,7 +255,7 @@ foreach ($groups as $group) {
                     class="flex flex-col items-center justify-center mt-8 space-y-4 md:flex-row md:space-y-0"
                 >
                     <div class="inline-flex rounded-md">
-                        <Button to="/docs/core/v2/quickstart">
+                        <Button to="/docs/core/v3/quickstart">
                             Quickstart
                         </Button>
                     </div>
