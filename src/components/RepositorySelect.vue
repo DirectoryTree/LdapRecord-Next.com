@@ -3,11 +3,11 @@
     <div
       v-if="repository"
       class="whitespace-nowrap"
-      slot-scope="{ repository, currentVersion }"
+      slot-scope="{ repository, currentVersion, getLatestVersion }"
     >
       <g-link
         v-if="repository.name === 'core'"
-        :to="`/docs/laravel/${currentVersion}`"
+        :to="getLatestVersion('laravel').uri"
         class="inline-flex text-ui-typo hover:text-ui-primary"
       >
         <LaravelIcon width="1.5em" height="1.5em" class="mr-1" />
@@ -16,7 +16,7 @@
 
       <g-link
         v-if="repository.name === 'laravel'"
-        :to="`/docs/core/${currentVersion}`"
+        :to="getLatestVersion('core').uri"
         class="inline-flex text-ui-typo hover:text-ui-primary"
       >
         <BoxIcon size="1.5x" class="mr-1" />
@@ -26,10 +26,9 @@
       <a
         :href="repository.url"
         v-if="repository.name === 'core'"
-        title="Github"
         target="_blank"
         rel="noopener noreferrer"
-        name="Core GitHub Repository"
+        title="Core GitHub Repository"
         class="inline-flex ml-3 text-ui-typo hover:text-ui-primary whitespace-nowrap"
       >
         <GithubIcon size="1.5x" class="mr-1" />
@@ -39,10 +38,9 @@
       <a
         :href="repository.url"
         v-if="repository.name === 'laravel'"
-        title="Github"
         target="_blank"
         rel="noopener noreferrer"
-        name="Larvel GitHub Repository"
+        title="Larvel GitHub Repository"
         class="inline-flex ml-3 text-ui-typo hover:text-ui-primary whitespace-nowrap"
       >
         <GithubIcon size="1.5x" class="mr-1" />

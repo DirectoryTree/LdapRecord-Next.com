@@ -3,7 +3,7 @@
     :class="{ highlighted: active }"
     class="relative flex items-center justify-between flex-grow px-4 py-2 cursor-pointer whitespace-nowrap code-tab text-ui-secondary select-none"
   >
-    <div class="absolute font-bold hover:bg-ui-border rounded-lg w-6 h-6 flex items-center justify-center" @click="$bus.$emit('easter')">
+    <div class="absolute font-bold hover:bg-ui-border rounded-lg w-6 h-6 flex items-center justify-center">
       <XIcon class="w-3 h-3"/>
     </div>
 

@@ -69,6 +69,7 @@ export default {
     meta() {
       return this.$static.metadata;
     },
+
     settings() {
       return this.meta.settings;
     },

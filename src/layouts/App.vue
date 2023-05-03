@@ -91,42 +91,7 @@ export default {
   data() {
     return {
       sidebarOpen: false,
-      easterClicked: 0,
     };
-  },
-
-  mounted() {
-    this.$bus.$on('easter', () => {
-      this.easterClicked++;
-
-      switch (true) {
-        case this.easterClicked === 5:
-          return window.alert('Hey stop that.');
-        case this.easterClicked === 10:
-          return window.alert('Seriously. Stop.');
-        case this.easterClicked === 15:
-          return window.alert('Why do you want this tab to close so badly?');
-        case this.easterClicked === 20:
-          return window.alert("You've got some serious problems.");
-        case this.easterClicked === 25:
-          return window.alert("You're really going to keep trying to close these tabs?");
-        case this.easterClicked === 30:
-          return window.alert("Sigh...");
-        case this.easterClicked === 35:
-          return window.alert("...");
-        case this.easterClicked === 40:
-          return window.alert("STOP");
-        case this.easterClicked === 45:
-          window.alert("FINE! You win. How about I close your whole browser tab then 😡");
-          return window.close();
-        default:
-          break;
-      }
-    });
-  },
-
-  beforeDestroy() {
-    this.$bus.$off('easter');
   },
 
   watch: {
