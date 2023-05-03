@@ -45,6 +45,7 @@ export default {
     return this.$scopedSlots.default({
       repository: this.repository,
       currentVersion: this.currentVersion,
+      getLatestVersion: this.getLatestVersion,
     });
   },
 
@@ -62,6 +63,16 @@ export default {
 
       this.currentVersion = version;
       this.repository = this.repositories.find((r) => r.name === repository);
+    },
+
+    getLatestVersion(repositoryName) {
+        const repository = this.repositories.find(({ name }) => repositoryName === name);
+
+        if (! repository) {
+          return;
+        }
+
+        return repository.versions[repository.versions.length - 1];
     },
   },
 };
