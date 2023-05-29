@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Prologue",
+    "items": [
+      { "name": "Release Notes", "path": "/docs/laravel/v3/release-notes" },
+      { "name": "Upgrading Guide", "path": "/docs/laravel/v3/upgrading" }
+    ]
+  },
+  {
+    "name": "Introduction",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v3" },
+      { "name": "Installation", "path": "/docs/laravel/v3/installation" },
+      { "name": "Configuration", "path": "/docs/laravel/v3/configuration" },
+      { "name": "Usage", "path": "/docs/laravel/v3/usage" }
+    ]
+  },
+  {
+    "name": "Authentication",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v3/auth" },
+      { "name": "Multi-Domain", "path": "/docs/laravel/v3/auth/multi-domain" },
+      {
+        "name": "Restricting Login",
+        "path": "/docs/laravel/v3/auth/restricting-login"
+      },
+      { "name": "Testing", "path": "/docs/laravel/v3/auth/testing" }
+    ]
+  },
+  {
+    "name": "Plain Auth",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v3/auth/plain" },
+      {
+        "name": "Configuration",
+        "path": "/docs/laravel/v3/auth/plain/configuration"
+      },
+      {
+        "name": "Logging In",
+        "path": "/docs/laravel/v3/auth/plain/logging-in"
+      },
+      {
+        "name": "Laravel UI",
+        "path": "/docs/laravel/v3/auth/plain/laravel-ui"
+      },
+      {
+        "name": "Laravel Breeze",
+        "path": "/docs/laravel/v3/auth/plain/laravel-breeze"
+      },
+      {
+        "name": "Laravel Jetstream",
+        "path": "/docs/laravel/v3/auth/plain/laravel-jetstream"
+      }
+    ]
+  },
+  {
+    "name": "Database Auth",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v3/auth/database" },
+      {
+        "name": "Installation",
+        "path": "/docs/laravel/v3/auth/database/installation"
+      },
+      {
+        "name": "Configuration",
+        "path": "/docs/laravel/v3/auth/database/configuration"
+      },
+      {
+        "name": "Logging In",
+        "path": "/docs/laravel/v3/auth/database/logging-in"
+      },
+      {
+        "name": "Importing Users",
+        "path": "/docs/laravel/v3/auth/database/importing"
+      },
+      {
+        "name": "Laravel UI",
+        "path": "/docs/laravel/v3/auth/database/laravel-ui"
+      },
+      {
+        "name": "Laravel Breeze",
+        "path": "/docs/laravel/v3/auth/database/laravel-breeze"
+      },
+      {
+        "name": "Laravel Jetstream",
+        "path": "/docs/laravel/v3/auth/database/laravel-jetstream"
+      },
+      {
+        "name": "Laravel Sanctum",
+        "path": "/docs/laravel/v3/auth/database/laravel-sanctum"
+      }
+    ]
+  },
+  {
+    "name": "SSO Auth",
+    "items": [
+      { "name": "Overview", "path": "/docs/laravel/v3/auth/sso" },
+      { "name": "Setup", "path": "/docs/laravel/v3/auth/sso/setup" }
+    ]
+  },
+  {
+    "name": "Other Features",
+    "items": [
+      { "name": "Lumen", "path": "/docs/laravel/v3/lumen" },
+      { "name": "Events", "path": "/docs/laravel/v3/events" },
+      { "name": "Testing", "path": "/docs/laravel/v3/testing" },
+      { "name": "Extending", "path": "/docs/laravel/v3/extending" },
+      { "name": "Debugging", "path": "/docs/laravel/v3/debugging" },
+      { "name": "Importing Objects", "path": "/docs/laravel/v3/importing" }
+    ]
+  },
+  {
+    "name": "Extra",
+    "items": [
+      { "name": "Versioning", "path": "/docs/laravel/v3/versioning" },
+      { "name": "License", "path": "/docs/laravel/v3/license" }
+    ]
+  }
+]
