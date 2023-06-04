@@ -3,7 +3,7 @@
     "name": "Prologue",
     "items": [
       { "name": "Release Notes", "path": "/docs/laravel/v3/release-notes" },
-      { "name": "Upgrading Guide", "path": "/docs/laravel/v3/upgrading" }
+      { "name": "Upgrade Guide", "path": "/docs/laravel/v3/upgrading" }
     ]
   },
   {
