@@ -40,6 +40,10 @@ module.exports = {
             name: "v2",
             sections: require("./src/sidebars/laravel/v2/sidebar.json"),
           },
+          {
+            name: "v3",
+            sections: require("./src/sidebars/laravel/v3/sidebar.json"),
+          },
         ],
       },
     ],
@@ -78,6 +82,11 @@ module.exports = {
             slug: "v2",
             name: "v2.x",
             uri: "/docs/laravel/v2",
+          },
+          {
+            slug: "v3",
+            name: "v3.x",
+            uri: "/docs/laravel/v3",
           },
         ],
       },
