@@ -57,7 +57,8 @@
       { "name": "Caching", "path": "/docs/core/v3/caching" },
       { "name": "Events", "path": "/docs/core/v3/events" },
       { "name": "Logging", "path": "/docs/core/v3/logging" },
-      { "name": "Testing", "path": "/docs/core/v3/testing" }
+      { "name": "Testing", "path": "/docs/core/v3/testing" },
+      { "name": "Testing API", "path": "/docs/core/v3/testing-api" }
     ]
   },
   {
