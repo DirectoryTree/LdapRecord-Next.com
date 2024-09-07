@@ -226,7 +226,7 @@ foreach ($groups as $group) {
 
                         <Feature
                             name="Friends In High Places"
-                            description="Feature packed integrations with Laravel and Lumen frameworks come directly supported."
+                            description="Includes a first-party feature packed integration with the Laravel framework."
                         >
                             <template #icon>
                                 <LaravelIcon class="w-6 h-6 text-white" />
